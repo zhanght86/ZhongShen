@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8"?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+	version="2.0">
+	<description>jsp工具类函数</description>
+	<tlib-version>1.0</tlib-version>
+	<short-name>fu</short-name>
+	<uri></uri>
+	
+	<function>
+		<description>完成认证当前Employee是否拥有此url的访问功能</description>
+		<name>check</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.Boolean check(java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>完成认证当前Employee是否拥有此url的访问功能</description>
+		<name>getPowers</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.String getPowers(java.util.List)</function-signature>
+	</function>
+	
+	<function>
+		<description>根据员工id获得员工姓名</description>
+		<name>getEmplNameById</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.String getEmplNameById(int)</function-signature>
+	</function>
+	
+	<function>
+		<description>根据多个员工id获得员工姓名</description>
+		<name>getEmplNamesByIds</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.String getEmplNamesByIds(java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>根据多个角色code获得角色名称</description>
+		<name>getRoleNamesByCode</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.String getRoleNamesByCode(java.lang.String)</function-signature>
+	</function>
+	
+	
+	<function>
+		<description>根据部门编号获得部门名称</description>
+		<name>getOrgNameByCode</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.String getOrgNameByCode(java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>根据菜单编号获得菜单名称</description>
+		<name>getMenuNameByCode</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.String getMenuNameByCode(java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>根据合同编号获得合同名称</description>
+		<name>getContractNameByCode</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.String getContractNameByCode(java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>根据项目编号获得项目名称</description>
+		<name>getXmNameByCode</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.String getXmNameByCode(java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>根据客户编号获得客户名称</description>
+		<name>getCusNameByCode</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.String getCusNameByCode(java.lang.String)</function-signature>
+	</function>
+
+	<function>
+		<description>格式化字符串，获取指定位置的字符串</description>
+		<name>format</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.String formate(java.lang.String,java.lang.Integer,java.lang.Integer)</function-signature>
+	</function>
+	<function>
+		<description>根据用户Id查询用户角色名称</description>
+		<name>getRoleCodesByUid</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.String getRoleCodesByUid(java.lang.String)</function-signature>
+	</function>
+	<function>
+		<description>根据用户Id查询用户角色名称</description>
+		<name>getRoleNameByUid</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.String getRoleNameByUid(java.lang.String)</function-signature>
+	</function>
+
+	<function>
+		<description>获得提醒类型的名称</description>
+		<name>getTypeNameByCode</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.String getTypeNameByCode(java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>检查当前审批人所在部门是否存在电子签章。如果存在就返回部门Id,如果不存在就返回</description>
+		<name>checkOrgSignet</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.String checkOrgSignet(java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>检查当前审批人是否存在电子签章。如果存在就返回显示电子签章的js脚本。如果不存在就返回显示姓名的js脚本</description>
+		<name>checkSignet</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.String checkSignet(java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>根据模板ID查找模板name</description>
+		<name>getNameByModelId</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.String getNameByModelId(java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>根据项目ID查找项目name</description>
+		<name>getNameByItemId</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.String getNameByItemId(java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>根据机构code查询出机构名称</description>
+		<name>getOrgNameByJmcode</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.String getOrgNameByJmcode(java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>根据机构code查询出机构名称</description>
+		<name>getOrgSignet</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.String getOrgSignet(java.lang.Integer)</function-signature>
+	</function>
+	
+	<function>
+		<description>根据机构code查询出机构名称</description>
+		<name>getSignet</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.String getSignet(java.lang.String)</function-signature>
+	</function>
+	<function>
+		<description>根据合同编号(hbcode)查询生成的最终编号(htcode)</description>
+		<name>getNumByCode</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.String getNumByCode(java.lang.String)</function-signature>
+	</function>
+	
+	
+	<function>
+		<description>根据部门编号获得部门名称</description>
+		<name>getOrgNameByOrgId</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.String getOrgNameByOrgId(java.lang.String)</function-signature>
+	</function>
+
+	<!-- 日志管理用到 -->
+	<function>
+		<description>通过id查询部门名称</description>
+		<name>getOrgNameByID</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.String getOrgNameByID(java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>通过人员Id查询出人员姓名</description>
+		<name>getEmplNameByEmplId</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.String getEmplNameByEmplId(java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>查询出其所有的子部门信息</description>
+		<name>getAllChildOrg</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.String getAllChildOrg(java.util.List)</function-signature>
+	</function>
+	
+	<function>
+		<description>根据用户id查询出其对应的部门信息</description>
+		<name>getOrgNameByEmplIds</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.String getOrgNameByEmplIds(java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>查询当前日志的批复条数</description>
+		<name>getReplyCount</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.Integer getReplyCount(java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>查询日志提交是否过时</description>
+		<name>validate</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.Boolean validate(java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>判断日志是否按时提交</description>
+		<name>validateTimeOfOut</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.Boolean validateTimeOfOut(java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>判断日志是否按时提交</description>
+		<name>validateTimeOut</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.Boolean validateTimeOut(java.lang.String, java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>登录用户是否的部门和所有的部门进行匹配</description>
+		<name>getOranization</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.Boolean getOranization(java.lang.String,java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>根据日志id查询出日志类型,如果查询多条拼接，用逗号隔开</description>
+		<name>searchTempTypeByJournalId</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.String searchTempTypeByJournalId(java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>根据日志id查询日志标题</description>
+		<name>getTitleByJournalId</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.String getTitleByJournalId(java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>判断批复时间是否在转发时间内</description>
+		<name>isNotShow</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.Boolean isNotShow(java.lang.String,java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>根据类型Id获得类型名称</description>
+		<name>getTemplateTypeName</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.String getTemplateTypeName(java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>给编号加1</description>
+		<name>getAddOne</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.String getAddOne(java.lang.String)</function-signature>
+	</function>
+
+  <function>
+		<description>根据用','号隔开的用户id获取用','号隔开的用户名称字符串</description>
+		<name>getEmplNamesByEmplIds</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.String getEmplNamesByEmplIds(java.lang.String)</function-signature>
+	</function>
+	<function>
+		<description>根据任务id获得任务名称</description>
+		<name>getTaskNameById</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.String getTaskNameById(java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>根据类型查询归还</description>
+		<name>getItems_is_return</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.String getItems_is_return(java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>根据会议Id查询与会者Id</description>
+		<name>getIds</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.String getIds(java.lang.String,java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>根据会议Id查询与会者Name</description>
+		<name>getNames</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.String getNames(java.lang.String,java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>获取某一条通知的人员查看情况</description>
+		<name>getNamesOfReadNotice</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.String getNamesOfReadNotice(java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>用于截取任务管理中添加修改操作中文本域中br</description>
+		<name>getCutInfo</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.String getCutInfo(java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>用于截取数值字符串</description>
+		<name>dateFormat</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.String dateFormat(java.lang.String)</function-signature>
+	</function>
+	<function>
+		<description>处理客户立项产品数据</description>
+		<name>getProHref</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.String getProHref(java.lang.String)</function-signature>
+	</function>
+	<function>
+		<description>根据项目id获得项目名称</description>
+		<name>getProjectNameById</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.String getProjectNameById(java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>查询客户信息-销售漏斗</description>
+		<name>searchSaleProjectInfo</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.String searchSaleProjectInfo(java.lang.String,java.lang.Integer,java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>获取下步计划-销售漏斗</description>
+		<name>getNextStep</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.String getNextStep(java.lang.String)</function-signature>
+	</function>
+	<function>
+		<description>根据比例id获得客户成交比例</description>
+		<name>getRateByRateNo</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.String getRateByRateNo(java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>通过跟进ID获取任务编号</description>
+		<name>getTaskId</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.String getRateByRateNo(java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>设置搜索关键字重点显示</description>
+		<name>setKeyWords</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.String setKeyWords(java.lang.String, java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+		<description>去除指定字符串中html代码</description>
+		<name>htmltoText</name>
+		<function-class>com.hnzskj.common.tag.FunctionUtils</function-class>
+		<function-signature>java.lang.String htmltoText(java.lang.String)</function-signature>
+	</function>
+</taglib>

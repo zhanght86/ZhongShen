@@ -1,0 +1,139 @@
+@CHARSET "UTF-8";
+
+html,body {
+	margin: 0;
+	padding: 0;
+	background-image: url("none.gif");
+	background-repeat: repeat;
+}
+
+.sjdh_main {
+	position: absolute;
+	width: 100%;
+	height: 500px;
+	margin-top: 50px;
+	background-color: navy;
+}
+
+.sjdh_main .sjdh_show {
+	position: absolute;
+	top: 5%;
+	left: 15%;
+	right: 15%;
+	height: 400px;
+}
+
+.show_left {
+	position: absolute;
+	top: 8%;
+	width: 10%;
+	height: 330px;
+	overflow: hidden;
+	background-color: #6ab630;
+}
+
+.show_left .but_left {
+	position: absolute;
+	top: 47%;
+	left: 40%;
+	height: 25px;
+	width: 25px;
+	z-index: 10;
+}
+
+.show_right .but_right {
+	position: absolute;
+	top: 47%;
+	right: 40%;
+	height: 25px;
+	width: 25px;
+	z-index: 10;
+}
+
+.show_center {
+	position: absolute;
+	left: 10%;
+	width: 80%;
+	height: 100%;
+	overflow: hidden;
+	background-color: green;
+}
+
+.show_right {
+	position: absolute;
+	top: 8%;
+	left: 90%;
+	width: 10%;
+	height: 330px;
+	overflow: hidden;
+	background-color: blue;
+}
+
+/********************/
+.show_left .left_cont {
+	position: absolute;
+	top: 5%;
+	left: 5%;
+	height: 90%;
+	width: 90%;
+	background-color: white;
+}
+
+.show_left .left_cont #left_cont_title {
+	position: absolute;
+	width: 11px;
+	font-size: 16px;
+	left: 40%;
+}
+
+.show_center div {
+	position: absolute;
+	top: 5%;
+	left: 1%;
+	height: 90%;
+	width: 98%;
+	background-color: white;
+}
+
+.show_right .right_cont {
+	position: absolute;
+	top: 5%;
+	right: 5%;
+	height: 90%;
+	width: 90%;
+	background-color: white;
+}
+
+.show_right .right_cont:hover {
+	cursor: pointer;
+}
+
+.sjdh_whole {
+	position: absolute;
+	width: 1000px;
+	height: 700px;
+	background-color: #c8c9cb;	
+}
+.show_right #down_pig{
+	position: absolute;
+	width:50px;
+	height:25px;
+	top:305px;
+	left:25px;
+	background: url("updown.png") no-repeat -114px -2px;
+	
+}
+.show_right #down_pig:hover{
+	cursor: pointer;
+}
+.show_right #up_pig{
+	position: absolute;
+	width:50px;
+	height:25px;
+	top:0px;
+	left:25px;
+	background: url("updown.png") no-repeat -60px -2px;
+}
+.show_right #up_pig:hover{
+	cursor: pointer;
+}

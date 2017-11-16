@@ -1,0 +1,48 @@
+@CHARSET "UTF-8";
+*{
+		background-color:e5edef;
+}
+#main{
+	width:100%;
+	height:850px;
+	margin:0 auto 0 auto;
+}
+#main dxyj {
+	font-size:15px;
+	margin-top:10px;
+	width:700px;
+	margin:0 auto 0 auto;	
+}
+#main dxyj .left{
+	width:100px;
+	height:30px;
+	text-align: right;
+	margin-right:5px;
+}
+#main dxyj .right{
+	width:100px;
+	text-align:left;
+	margin-left:5px;
+}
+#main dxyj .main{	
+	height:500px;
+}
+
+#main ffal{
+	width:900px;
+	margin:0 auto;
+}
+#main ffal .left{
+	text-align: right;
+}
+#main ffal .right{
+	text-align: left;
+}
+
+#main .main{
+	width:650px;
+	height:720px;
+}
+#main .con{
+	width:250px;
+}

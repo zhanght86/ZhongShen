@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+<!-- ＝＝＝＝＝＝系统管理模块配置开始＝＝＝＝＝＝＝ -->
+	<!-- 员工模块 -->
+	<bean id="employeeService" class="com.hnzskj.service.system.impl.EmployeeServiceImpl"
+		scope="prototype">
+		<property name="employeeDao" ref="employeeDao" />
+	</bean>
+	<!-- 角色模块 -->
+	<bean id="roleService" class="com.hnzskj.service.system.impl.RoleServiceImpl"
+		scope="prototype">
+		<property name="roleDao" ref="roleDao" />
+	</bean>
+	<!-- 功能模块 -->
+	<bean id="powerService" class="com.hnzskj.service.system.impl.PowerServiceImpl"
+		scope="prototype">
+		<property name="powerDao" ref="powerDao" />
+		<property name="roleDao" ref="roleDao" />
+		<property name="employeeDao" ref="employeeDao" />
+	</bean>
+	<!-- 操作日志模块 -->
+	<bean id="operationLogService" class="com.hnzskj.service.system.impl.OperationLogServiceImpl"
+		scope="prototype">
+		<property name="operationLogDao" ref="operationLogDao" />
+	</bean>
+	<!-- 系统管理模块结束 -->
+	<!-- 系统配置文件操作开始  田玉江 -->
+	<bean id="systemXmlService" class="com.hnzskj.service.systemxml.impl.SystemXmlServlceImpl"
+		scope="prototype">
+		<property name="systemXmlDao" ref="systemXmlDao"></property>
+	</bean>
+
+	<!-- 工作流模快 -->
+	<bean id="workFlowService" class="com.hnzskj.service.flow.impl.WorkFlowServiceImpl" scope="prototype">
+		 <property name="tempDao" ref="templateDao"></property>
+		 <property name="tacheDao" ref="tacheDao"></property>
+		 <property name="lineDao" ref="lineDao"></property>
+		 <property name="iwfDao" ref="instanceWFDao"></property>
+		 <property name="ieiDaoImpl" ref="instanceInfoDao"></property>
+		 <property name="taskDaoImpl" ref="taskDao"></property>
+		 <property name="flowMessDao" ref="flowMessDao"></property>
+		 <property name="roleDao" ref="roleDao" />
+		 <property name="employeeDao" ref="employeeDao" />
+		 <property name="workFlowDao" ref="workFlowDao" />
+	</bean>
+	
+	<bean id="flowRefService" class="com.hnzskj.service.flow.impl.FlowRefServiceImpl" scope="prototype">
+		<property name="flowRefDao" ref="flowRefDao"></property>
+	</bean>
+	
+	<!-- 常用语 -->
+	<bean id="phrasesService" class="com.hnzskj.service.flow.impl.PhrasesServiceImpl">
+	 <property name="phraseDao" ref="phrasesDao"></property>
+	</bean>
+
+	<bean id="dotLineService" class="com.hnzskj.service.flow.impl.DotLineServiceImpl" scope="prototype">
+		 <property name="tempDao" ref="templateDao"></property>
+		 <property name="tacheDao" ref="tacheDao"></property>
+		 <property name="lineDao" ref="lineDao"></property>
+	</bean>
+	
+	<bean id ="shenService" class="com.hnzskj.service.wflow.impl.ShenPiServiceImpl" scope="prototype">
+		<property name="shenDao" ref="shenDao"></property>
+	</bean> 
+		<!-- ＝＝＝＝＝＝审计助手＝＝＝＝＝＝＝ -->
+	<bean id ="shenJiZhuShouService" class="com.hnzskj.service.sjzs.impl.ShenJiZhuShouServiceImpl" scope="prototype">
+		<property name="shenJiZhuShouDao" ref="shenJiZhuShouDao"></property>
+	</bean>
+	<bean id ="shenJiFaGuiService" class="com.hnzskj.service.sjzs.impl.ShenJiFaGuiServiceImple" scope="prototype">
+		<property name="shenJiFaGuiDao" ref="shenJiFaGuiDao"></property>
+	</bean>
+	<bean id ="dingXingYiJuService" class="com.hnzskj.service.sjzs.impl.DingXingYiJuServiceImple" scope="prototype">
+		<property name="dingXingYiJuDao" ref="dingXingYiJuDao"></property>
+	</bean>
+	<bean id ="fangFaAnLiService" class="com.hnzskj.service.sjzs.impl.FangFaAnLiServiceImpl" scope="prototype">
+		<property name="fangFaAnLiDao" ref="fangFaAnLiDao"></property>
+	</bean>
+	<bean id="attachSJZSService" class="com.hnzskj.service.sjzs.impl.AttachSJZSServiceImpl" scope="prototype">
+		<property name="attachSJZSDao" ref="attachSJZSDao"></property>
+		<property name="updateDataLogDao" ref="updateDataLogDao"></property>
+	</bean>
+	<bean id="sjdhService" class="com.hnzskj.service.sjzs.impl.SjdhMethodServiceImpl" scope="prototype">
+		<property name="sjdhDao" ref="sjdhDao"></property>
+		<property name="shenJiZhuShouDao" ref="shenJiZhuShouDao"></property>
+		<property name="attachSJZSDao" ref="attachSJZSDao"></property>
+		<property name="workFlowDao" ref="workFlowDao"></property>
+		<property name="flowRefDao" ref="flowRefDao"></property>
+	</bean>
+	
+	<bean id="dataDicService" class="com.hnzskj.service.sjzs.impl.DataDicServiceImpl" scope="prototype">
+		<property name="dataDicDao" ref="dataDicDao"></property>
+	</bean>
+	<bean id="shiShiFangAnService" class="com.hnzskj.service.sjzs.impl.ShiShiFangAnServiceImpl" scope="prototype">
+		<property name="shiShiFangAnDao" ref="shiShiFangAnDao"></property>
+	</bean>
+		
+	<bean id="updateDataLogService" class="com.hnzskj.service.sjzs.impl.UpdateDataLogServiceImpl" scope="prototype">
+		<property name="updateDataLogDao" ref="updateDataLogDao"></property>
+	</bean>
+	<!-- 前台 -->
+	<bean id="regLoginService" class="com.hnzskj.service.fore.impl.RegLoginServiceImpl" scope="prototype">
+		<property name="regLoginDao" ref="regLoginDao"></property>		
+	</bean>
+	<bean id="searchService" class="com.hnzskj.service.fore.impl.SearchServiceImpl" scope="prototype">
+		<property name="searchDao" ref="searchDao"></property>
+	</bean>
+	<bean id="showInfoService" class="com.hnzskj.service.fore.impl.ShowInfoServiceImpl" scope="prototype">
+		<property name="showInfoDao" ref="showInfoDao"></property>
+	</bean>
+	<bean id="wdzsService" class="com.hnzskj.service.fore.impl.WdzsServiceImpl" scope="prototype">
+		<property name="wdzsDao" ref="wdzsDao"></property>
+	</bean>
+	<!-- 用户自己上传的附件操作 -->
+	<bean id="clientUploadService" class="com.hnzskj.service.fore.impl.ClientUploadServiceImpl" scope="prototype">
+		<property name="clientUploadDao" ref="clientUploadDao"></property>
+		<property name="fangFaAnLiDao" ref="fangFaAnLiDao"></property>
+		<property name="shenJiFaGuiDao" ref="shenJiFaGuiDao"></property>
+		<property name="shiShiFangAnDao" ref="shiShiFangAnDao"></property>
+		<property name="clientUploadAttachDao" ref="clientUploadAttachDao"></property>
+		<property name="attachSJZSDao" ref="attachSJZSDao"></property>
+		<property name="transportDataLogDao" ref="transportDataLogDao"></property>
+	</bean>
+	<!-- 文档审核 -->
+	<bean id="checkLogService" class="com.hnzskj.service.sjzs.impl.CheckLogServiceImpl" scope="prototype">
+		<property name="checkLogDao" ref="checkLogDao"></property>
+	</bean>
+	
+	<!-- 针对审计导航前台显示 -->
+	<bean id="showXmlService" class="com.hnzskj.service.xml.impl.ShowXmlServiceImpl" scope="prototype">
+		<property name="showXmlDao" ref="showXmlDao"></property>
+	</bean>
+	<!-- 前台上传附件 -->
+	<bean id="clientUploadAttachService" class="com.hnzskj.service.fore.impl.ClientUploadAttachServiceImpl" scope="prototype">
+		<property name="clientUploadAttachDao" ref="clientUploadAttachDao"></property>
+	</bean>
+	<!-- 数据迁移日志 -->
+	<bean id="dataTransportService" class="com.hnzskj.service.fore.impl.DataTransportServiceImpl" scope="prototype">
+		<property name="dataTransportDao" ref="dataTransportDao"></property>
+	</bean>
+</beans>

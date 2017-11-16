@@ -1,0 +1,100 @@
+@CHARSET "UTF-8";
+html,body{
+	padding:0;
+	margin:0;
+	background-color: white;
+	font: 12px/ 1.333 arial, helvetica, clean;
+}
+.up_all{
+	width:600px;
+	height:450px;
+	margin:0 auto;
+	margin-top:20px;
+}
+
+.up_all .up_main{
+	width:100%;
+	height:440px;
+	border: #cbdfd6 1px solid;
+	background-color: #fafdfc;
+}
+.up_all .up_main table{
+	width: 100%;
+	height:100%;
+}
+.up_all .up_main .up_tab_title{
+	height:60px;
+	background-color: #e9f7f1;	
+}
+.up_all .up_main .up_tab_title td{
+	border-bottom:#a2beb2 1px solid;
+}
+.up_all .up_main .up_tab_title td h3{
+	margin:0;
+	padding:0;
+	line-height:60px;
+	margin-left:20px;
+	color:#333;
+	font-size: 14px;
+	font-family: arial, "宋体", sans-serif;
+}
+.up_all .up_main .up_tab_main{
+	height:380px;
+}
+.up_all .up_main .up_tab_main table{
+	width:100%;
+	height:380px;
+	font-size:14px;
+}
+.up_tab_main table .sortName{
+	height:30px;
+	text-align: left;
+}
+.up_all .up_main .up_tab_main table .left{
+	width:80px;
+	text-align: right;
+}
+.up_all .up_main .up_tab_main table .right{
+	text-align:left;
+}
+.up_tab_main table .right input{
+	margin-left:10px;
+}
+.up_tab_main table .right select{
+	margin-left:10px;
+}
+.up_all .up_main .up_tab_main table .up_file_tr,.up_main .up_tab_main table .up_file_but{
+	text-align:center;
+	height:55px;
+}
+.up_tab_main table .tab_main_title{
+	height:30px;
+}
+.up_tab_main table .tab_main_cont{
+	height:70px;
+}
+.up_tab_main table .tab_main_menu{
+	height:80px;
+}
+.up_tab_main table .tab_main_menu select{
+	display:inline;
+	width:300px;
+	margin-left:10px;
+	margin-top:5px;
+}
+.up_tab_main table .up_file_but{
+	text-align: center;
+	line-height:40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

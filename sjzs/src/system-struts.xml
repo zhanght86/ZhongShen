@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="systempackage" extends="sjzs" namespace="/system">
+
+	<!-- 配置当前pageckage默认拦截器 -->
+		<interceptors>
+		<!--判断当前登陆用户是否拥有当前url的权限-->
+			<interceptor name="authen"
+				class="com.hnzskj.common.interceptor.AuthenInterceptor" /> 
+			<interceptor-stack name="defaultStack_system">
+				<interceptor-ref name="defaultStack" />
+			      <interceptor-ref name="authen" /> 
+			</interceptor-stack>
+		</interceptors>
+		<!--设置本包的默认拦截器 -->
+		 <default-interceptor-ref name="defaultStack_system" />
+		<!-- 指定默认的Action -->
+		<default-action-ref name="notfound" />
+		<!--  定义全局Result映射-->
+		<global-results>
+			<!-- 定义异常对应的视图页 -->
+			<result name="error">/error.jsp</result>
+			<!-- 操作提示信息视图页 -->
+			<result name="errorinfo">/info.jsp</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping result="errorinfo"
+				exception="com.hnzskj.common.SystemException"></exception-mapping>
+		</global-exception-mappings>
+		<!-- 当找不到用户指定的action时使用-->
+		<action name="notfound">
+			<result>/404.jsp</result>
+		</action>
+
+		<!-- 进入登陆页面 -->
+		<action name="index" class="LoginAction" method="index">
+			<result name="success">/view/index.jsp</result>
+		</action>
+
+		<action name="login" class="LoginAction">
+			<result name="success">/view/main.jsp</result>
+			
+			
+			<!-- 退出登录 -->
+			<result name="loginout" type="redirectAction">
+				<param name="actionName">/index.action</param>
+				<param name="namespace">/system</param>
+			</result>
+			<!-- 员工离职 -->
+			<result name="dimission">/view/common/login_fail.jsp</result>
+			<!-- 员工账号未初始化 -->
+			<result name="uninit">/view/common/login_fail.jsp</result>
+			<!-- 登录失败 -->
+			<result name="error">/view/common/login_fail.jsp</result>
+			<!-- 当前IP已经登录了一个用户 -->
+			<result name="repeatIp">/view/common/login_fail.jsp</result>
+			<!-- 当前用户已经登录 -->
+			<result name="repeatEmpl">/view/common/login_fail.jsp</result>
+			<!-- 预警页面 -->
+			<!--  <result name="warning">/view/warning.jsp</result>-->
+			<result name="warning">/view/mainBody.jsp</result>
+			<!-- 服务器端没有插上软件加密锁 -->
+			<result name="nolock">/view/common/login_fail.jsp</result>
+		</action>
+		<!-- 文件下载 -->
+		<action name="download" class="DownloadAction"></action>
+		<action name="upword" class="uploadWord">
+			<result name="htmlContent">/view/common/htmlContent.jsp</result>
+		</action>
+			<!-- 审计助手 菜单-->
+		<action name="sjzs" class="shenJiZhuShouAction">
+			<result name="success">/WEB-INF/view/sjzs/addSuccess.jsp</result>
+			<result name="welcome">/WEB-INF/view/sjzs/welcome.jsp</result>
+			<result name="addPage">/WEB-INF/view/sjzs/addSjzsMenu.jsp</result>
+			<result name="menuMangePage">/WEB-INF/view/sjzs/menuMangePage.jsp</result>
+			<result name="menuMangePage2">/WEB-INF/view/sjzs/menuMangePage2.jsp</result>
+			<result name="initmenutree">/WEB-INF/view/sjzs/menuMangePage.jsp</result>
+			<result name="showsearchLaws">/WEB-INF/view/sjzs/showlistAuditLaws.jsp</result>
+			<!-- 添加成功后关闭添加页 -->
+			<result name="addSuc">/WEB-INF/view/sjzs/success.jsp?type=addMenuWin</result>
+			<!-- 进入修改页面 -->
+			
+			<result name="daoru">/WEB-INF/view/sjzs/daoru.jsp</result>
+			<result name="updatePage">/WEB-INF/view/sjzs/updateMenu.jsp</result>
+			<!-- 修改成功后关闭编辑页 -->
+			<result name="movesuc">/WEB-INF/view/sjzs/addSuccess.jsp?type=updMenuWin&amp;menuType=${menuType}</result>
+			<result name="updateSuc">/WEB-INF/view/sjzs/success.jsp?type=updMenuWin</result>
+			<result name="fail">/view/common/pub_fail.jsp</result>
+			<result name="importSuc">/WEB-INF/view/sjzs/addSuccess.jsp?type=daoruMenuWin</result>
+			<result name="importSucFaile">/view/common/pub_failandsuccess.jsp</result>
+			<result name="importSucFaileexecl">/view/common/pub_execlfailandsuccess.jsp</result>
+			<result name="failfile">/view/common/attach_pub_fail.jsp</result>
+		
+			<result name="showSJFG" type="redirectAction">
+				<param name="actionName">sjzs!showSJFG.action</param>
+				<param name="namespace">/system</param>
+			</result>
+			<result name="showDXYJ" type="redirectAction">
+				<param name="actionName">sjzs!showDXYJ.action</param>
+				<param name="namespace">/system</param>
+			</result>
+			<result name="showFFAL" type="redirectAction">
+				<param name="actionName">sjzs!showFFAL.action</param>
+				<param name="namespace">/system</param>
+			</result>
+			<result name="showSJDH" type="redirectAction">
+				<param name="actionName">sjzs!showSJDH.action</param>
+				<param name="namespace">/system</param>
+			</result>
+			<result name="showSJSX" type="redirectAction">
+				<param name="actionName">sjzs!showSJSX.action</param>
+				<param name="namespace">/system</param>
+			</result>
+				<result name="showSSFA" type="redirectAction">
+				<param name="actionName">sjzs!showSSFA.action</param>
+				<param name="namespace">/system</param>
+			</result>
+			
+			
+			<!-- 异步下 -->
+			  <result name="showSJFGAsync" type="redirectAction">
+				<param name="actionName">sjzs!initmenutree.action?type=1</param>
+				<param name="namespace">/system</param>
+			</result>
+			<result name="showDXYJAsync" type="redirectAction">
+				<param name="actionName">sjzs!initmenutree.action?type=2</param>
+				<param name="namespace">/system</param>
+			</result>
+			<result name="showFFALAsync" type="redirectAction">
+				<param name="actionName">sjzs!initmenutree.action?type=3</param>
+				<param name="namespace">/system</param>
+			</result>
+			<result name="showSJDHAsync" type="redirectAction">
+				<param name="actionName">sjzs!initmenutree.action?type=4</param>
+				<param name="namespace">/system</param>
+			</result>
+			<result name="showSJSXAsync" type="redirectAction">
+				<param name="actionName">sjzs!initmenutree.action?type=5</param>
+				<param name="namespace">/system</param>
+			</result>
+			<result name="showSSFAAsync" type="redirectAction">
+				<param name="actionName">sjzs!initmenutree.action?type=6</param>
+				<param name="namespace">/system</param>
+			</result>
+			
+			<!-- 异步上 -->
+			
+			<result name="showLaw">/WEB-INF/view/sjzs/showLaw.jsp</result>
+			<result name="showDX">/WEB-INF/view/sjzs/showDXYJ.jsp</result>
+			<result name="showDH">/WEB-INF/view/sjzs/showSJDH.jsp</result>
+			<result name="showExport" >/WEB-INF/view/sjzs/showExport.jsp</result>
+			<result name="exportSuc" >/WEB-INF/view/sjzs/showExport.jsp?flag=ok</result>
+			<result name="movePage">/WEB-INF/view/sjzs/moveTree.jsp</result>
+			
+			
+		</action>
+		<!-- 审计法规 -->
+		<action name="sjfg" class="shenJiFaGuiAction">
+			<result name="searchLaws">/WEB-INF/view/sjzs/listAuditLaws.jsp</result>
+			<result name="showsearchLaws">/WEB-INF/view/sjzs/showlistAuditLaws.jsp</result>
+			<result name="fail">/view/common/pub_fail.jsp</result>
+			<result name="addPage">/WEB-INF/view/sjzs/addAuditLaw.jsp</result>
+			<result name="updatePage">/WEB-INF/view/sjzs/updateAuditLaw.jsp</result>
+			<result name="addsucs">/WEB-INF/view/sjzs/addSuccess.jsp?type=addMenuWin</result>
+			<result name="updatesuc">/WEB-INF/view/sjzs/addSuccess.jsp?type=updMenuWin</result>
+			<result name="delSuc" type="redirectAction">
+				<param name="actionName">sjfg!searchMessage.action</param>
+				<param name="law.lawSort">${law.lawSort}</param>
+				<param name="menuType">${menuType}</param>
+				<param name="namespace">/system</param>
+			</result>
+		</action>
+		<!-- 定性依据 -->
+		<action name="dxyj" class="dingXingYiJuAction">
+			<result name="list">/WEB-INF/view/sjzs/listAuditSearchDXYJ.jsp</result>
+			<result name="showLaw">/WEB-INF/view/sjzs/showDXYJ.jsp</result>
+			<result name="addsucs">/WEB-INF/view/sjzs/addSuccess.jsp?type=addMenuWin</result>
+			<result name="showlist">/WEB-INF/view/sjzs/showlistAuditSearchDXYJ.jsp</result>
+			<result name="addPage">/WEB-INF/view/sjzs/addAuditDXYJ.jsp</result>
+			<result name="updatePage">/WEB-INF/view/sjzs/updateDXYJ.jsp</result>
+			<result name="updateSuc">/WEB-INF/view/sjzs/addSuccess.jsp?type=updMenuWin</result>			
+			<result name="delSuc" type="redirectAction">
+				<!-- /WEB-INF/view/sjzs/listAuditSearchDXYJ.jsp  -->
+				<param name="actionName">dxyj!searchMessage.action</param>
+				<param name="law.parentID">${law.parentID}</param>
+				<param name="menuType">${menuType}</param>
+				<param name="namespace">/system</param>			
+			</result>
+			<result name="fail">/view/common/pub_fail.jsp</result>
+		</action>
+		<!-- 上传word文件导入到fckeditor编辑器中 -->
+		<action name="uploadWord" class="uploadWord" method="uploadWord">
+			<result name="htmlContent">/view/common/htmlContent.jsp</result>
+		</action>
+			<!-- 方法案例 -->
+		<action name="ffal" class="fangFaAnLiAction">
+			<result name="searchFFALs">/WEB-INF/view/sjzs/listFFAL.jsp</result>
+			<result name="showsearchFFALs">/WEB-INF/view/sjzs/showlistFFAL.jsp</result>
+			<result name="fail">/view/common/pub_fail.jsp</result>
+			<result name="addPage">/WEB-INF/view/sjzs/addFFAL.jsp</result>
+			<result name="updatePage">/WEB-INF/view/sjzs/updateFFAL.jsp</result>
+			<result name="addsucs">/WEB-INF/view/sjzs/addSuccess.jsp?type=addMenuWin</result>
+			<result name="updatesuc">/WEB-INF/view/sjzs/addSuccess.jsp?type=updMenuWin</result>
+			<result name="delSuc" type="redirectAction">
+				<param name="actionName">ffal!searchMessage.action</param>
+				<param name="ffal.sort">${ffal.sort}</param>
+				<param name="namespace">/system</param>
+				<param name="menuType">${menuType}</param>
+			</result>
+		</action>
+		
+			<!-- 审计事项 -->
+		<action name="dataDic" class="dataDicAction">
+			<result name="searchDataDics">/WEB-INF/view/sjzs/listDataDic.jsp</result>
+			<result name="showsearchDataDics">/WEB-INF/view/sjzs/showlistDataDic.jsp</result>
+			<result name="fail">/view/common/pub_fail.jsp</result>
+			<result name="addPage">/WEB-INF/view/sjzs/addDataDic.jsp</result>
+			<result name="updatePage">/WEB-INF/view/sjzs/updateDataDic.jsp</result>
+			<result name="addsucs">/WEB-INF/view/sjzs/addSuccess.jsp?type=addMenuWin</result>
+			<result name="updatesuc">/WEB-INF/view/sjzs/addSuccess.jsp?type=updMenuWin</result>
+			<result name="fail">/view/common/pub_fail.jsp</result>
+			<result name="delSuc" type="redirectAction">
+				<param name="actionName">dataDic!searchMessage.action</param>
+				<param name="dataDicDto.dicParentId">${dataDicDto.dicParentId}</param>
+				<param name="namespace">/system</param>
+			</result>
+		</action>
+		<!-- 审计实施案例 -->
+		<action name="ssfa" class="shiShiFangAnAction">
+			<result name="searchSSFAs">/WEB-INF/view/sjzs/listSSFA.jsp</result>
+			<result name="showsearchSSFAs">/WEB-INF/view/sjzs/showlistSSFA.jsp</result>
+			<result name="fail">/view/common/pub_fail.jsp</result>
+			<result name="addPage">/WEB-INF/view/sjzs/addSSFA.jsp</result>
+			<result name="updatePage">/WEB-INF/view/sjzs/updateSSFA.jsp</result>
+			<result name="addsucs">/WEB-INF/view/sjzs/addSuccess.jsp?type=addMenuWin</result>
+			<result name="updatesuc">/WEB-INF/view/sjzs/addSuccess.jsp?type=updMenuWin</result>
+			<result name="delSuc" type="redirectAction">
+				<param name="actionName">ssfa!searchMessage.action</param>
+				<param name="shiShiFangAn.sort">${shiShiFangAn.sort}</param>
+				<param name="menuType">${menuType}</param>
+				<param name="namespace">/system</param>
+			</result>
+		</action>
+		<!-- 审计导航 -->
+		<action name="sjdh" class="sjdhAction">
+			<result name="list">/WEB-INF/view/sjzs/listSjdhMethod.jsp</result>
+			<result name="toAddPage">/WEB-INF/view/sjzs/addSjdhMethod.jsp</result>
+			<result name="toUpdatePage">/WEB-INF/view/sjzs/updateSjdhMethod.jsp</result>
+		    <result name="addsucs">/WEB-INF/view/sjzs/addSuccess.jsp?type=addMenuWin</result>
+			<result name="updatesuc">/WEB-INF/view/sjzs/addSuccess.jsp?type=updMenuWin</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">sjdh!serachSjdhMethod.action</param>
+				<param name="sjdhMethod.typeNo">${sjdhMethod.typeNo}</param>
+				<param name="namespace">/system</param>
+			</result>
+		</action>
+		<!-- 文档审核 -->
+		<action name="wdsh" class="wdshAction">
+			<result name="list">/WEB-INF/view/sjzs/checkList.jsp</result>
+			<result name="showList" type="redirect">wdsh!list.action</result>
+			<result name="checkFFAL">/WEB-INF/view/sjzs/checkClientUploadFFAL.jsp</result>
+			<result name="checkSJFG">/WEB-INF/view/sjzs/checkClientUploadSJFG.jsp</result>
+			<result name="checkDXYJ">/WEB-INF/view/sjzs/checkClientUploadDXYJ.jsp</result>
+			<result name="checkSJSS">/WEB-INF/view/sjzs/chcekClientUploadSSFA.jsp</result>
+			<result name="attachInfo">/WEB-INF/view/sjzs/checkClientUpload.jsp</result>
+		</action>
+		<!-- 用户上传 -->
+		<action name="clientUpload" class="clientUploadAtion">
+			<result name="listSJFG">/WEB-INF/view/sjzs/listUserAuditLaws.jsp</result>
+			<result name="listFFAL">/WEB-INF/view/sjzs/listUserFFAL.jsp</result>
+			<result name="listSSFN">/WEB-INF/view/sjzs/listUserSSFA.jsp</result>
+			<result name="attachInfo">/WEB-INF/view/sjzs/checkClientUpload.jsp</result>
+		</action>	
+		
+	<!-- 审计助手 end-->	
+   <!-- 流程设置 -->
+   <action name="workflow" class="workflowAction">
+		 	
+		 	<result name="success">/view/workflow/workflow.jsp</result>
+		 	<result name="toTempPage">/view/workflow/templateProp.jsp</result>
+		 	<result name="toLinePage">/view/workflow/lineProp.jsp</result>
+		 	<result name="toTachePage">/view/workflow/tacheProp.jsp</result>
+		 	<result name="chooseTemp">/view/workflow/showTemp.jsp</result>	
+		 	<result name="getTempId">/view/workflow/getTemplate.jsp</result>
+		 	<result name="strjob">/view/workflow/holidays.jsp</result>		
+		 	<result name="choose" >/view/workflow/chooseTemp.jsp</result>
+		 	<result name="commit">/view/workflow/list_task.jsp</result>	
+		 	<result name="flowview">/view/workflow/freeFlow.jsp</result>
+		 	<result name="history">/view/workflow/list_instance.jsp</result>
+		 	<result name="tacheTask">/view/workflow/tache_task.jsp</result>
+		 	<result name="toOrgMain">/WEB-INF/view/flow/showFlowMain.jsp</result>
+		 	<result name="handleEmpl">/view/workflow/chooseTacheEmpl.jsp</result>
+		 	<result name="toPaperPage">/WEB-INF/view/flow/paperflow.jsp</result>
+		 	<result name="fMain">/view/workflow/operateMain.jsp</result>
+		 	<result name="showTache">/view/workflow/showTache.jsp</result>
+		 	<result name="toShMain">/WEB-INF/view/sjzs/showMainList.jsp</result>
+		 </action>
+		
+		
+		
+		<!-- 功能管理模块 -->
+		<action name="power" class="PowerAction">
+			<!-- 跳转到添加页面 -->
+			<result name="addPage">/view/back/power/addPower.jsp</result>
+			<!-- 添加成功,跳转到列表页面 -->
+			<result name="addSuc">/view/common/pub_success.jsp</result>
+			<!-- 列表页面 -->
+			<result name="listPage">/view/back/power/listPower.jsp</result>
+			<!-- 更新页面 -->
+			<result name="updatePage">/view/back/power/updatePower.jsp</result>
+			<!-- 更新成功页面后,跳转列表页面 -->
+			<result name="updateSuc">/view/common/pub_success.jsp</result>
+			<!-- 删除成功后,跳转列表页面 -->
+			<result name="delSuc" type="redirectAction">
+				<param name="actionName">power!searchPower.action</param>
+        		<param name="namespace">/system</param>
+        		<param name="power.powerId">${parentCode}</param>
+			</result>
+			<!-- 进入授权页面  判断权限类型 -->
+			<result name="authpage">/view/back/role/shouquan.jsp</result>
+			
+			<!-- 更新失败后进入更新页面 -->
+			<result name="fail">/view/common/pub_fail.jsp</result>
+			<!-- 权限选择界面 -->
+			<result name="selectPower">/view/back/power/selectPower.jsp</result>
+		</action>
+		
+		<!-- 操作日志管理模块 -->
+		<action name="oprLog" class="OperationLogAction">
+			<!-- 日志列表页面 -->
+			<result name="listPage">/view/back/oprlog/listOprLog.jsp</result>
+			<!-- 查看页面 -->
+			<result name="showPage">/view/back/oprlog/showLog.jsp</result>
+		</action>
+		
+		
+			
+		<!-- 角色管理模块 -->
+		<action name="role" class="RoleAction">
+			<!-- 跳转到添加页面 -->
+			<result name="addPage">/view/back/role/addRole.jsp</result>
+			<!-- 添加成功,跳转到列表页面 -->
+			<result name="addSuc">/view/common/pub_success.jsp?type=${type}</result>
+			<!-- 删除成功，跳转到列表页面 -->
+			<result name="delSuc" type="redirectAction">
+				<param name="actionName">role!searchRole.action</param>
+				<param name="namespace">/system</param>
+			</result>
+			
+			<!-- 列表页面 -->
+			<result name="listPage">/view/back/role/listRole.jsp</result>
+			<result name="RoleChoose">/view/workflow/chooseRoles.jsp</result>
+			<!-- 机构列表选择页面 -->
+			<result name="selectOrgs">/view/back/role/selectOrg/selectOrg.jsp</result>
+			<result name="selectMains">/view/back/role/selectOrg/orgFrame.jsp</result>
+			<!-- 更新页面 -->
+			<result name="updatePage">/view/back/role/updateRole.jsp</result>
+			<!-- 更新成功页面后,跳转列表页面 -->
+			<result name="updateSuc">/view/common/pub_success.jsp</result>
+			<!-- 进入授权页面 -->
+			<result name="authpage">/view/back/role/shouquan.jsp</result>
+			<!-- 进入用户角色选择页面 -->
+			<result name="selrole">/view/back/role/selectRole_user.jsp</result>
+			<!-- 授权成功 -->
+			<result name="authSuc">/view/common/pub_success.jsp</result>
+			<!-- 授权失败 -->
+			<result name="fail">/view/common/pub_fail.jsp</result>
+			<!-- 权限查看页面 -->
+			<result name="showPowers">/view/back/role/showPowers.jsp</result>
+		
+		</action>
+		
+		
+		<!-- 员工管理模块 -->
+		<action name="empl" class="EmployeeAction">
+			<!-- 添加员工页面 -->
+			<result name="addPage">/view/back/empl/addEmpl.jsp</result>
+			<!-- 员工列表页面 -->
+			<result name="listPage">/view/back/empl/listEmpl.jsp</result>
+			<!-- 添加成功后，跳转到员工列表页面 -->
+			<result name="addSuc">/view/common/pub_success.jsp</result>
+			<!-- 添加失败后 -->
+			<result name="addFail">/view/common/pub_fail.jsp</result>
+			<result name="fail">/view/common/pub_fail.jsp</result>
+				<!-- 注销成功后跳转到员工列表页面 -->
+			<result name="updateStatuSuc" type="redirectAction">
+				 <param name="actionName">empl!searchEmpl.action</param>
+        		 <param name="namespace">/system</param>
+			</result>
+			
+			<!-- 密码重置成功后跳转到员工列表页面 -->
+			<result name="resetSuc" type="redirectAction">
+				 <param name="actionName">empl!searchEmpl.action</param>
+        		 <param name="namespace">/system</param>
+			</result>
+			<!-- 进入员工修改页面 -->
+			<result name="updatePage">/view/back/empl/updateEmpl.jsp</result>
+			<!-- 删除成功 -->
+			<result name="delSuc" type="redirectAction">
+				<param name="actionName">empl!searchEmpl.action</param>
+        		<param name="namespace">/system</param>
+			</result>
+			<!-- 更新成功 -->
+			<result name="updateSuc">/view/common/pub_success.jsp</result>
+			<!-- 选择用户列表页面 -->
+			<result name="selectMain">/view/back/selectempl/emplFrame.jsp</result>
+			<!-- 选择用户列表页面选作查阅人 -->
+			<result name="selectConaccess">/view/back/selectempl/selectConaccess.jsp</result>
+			<!-- 选择用户列表页面 -->
+			<result name="selectPage">/view/back/selectempl/selectEmpl.jsp</result>
+			<!-- 机构树页面 -->
+			<result name="orgTreeEmpl">/view/back/selectempl/orgTree.jsp</result>
+			<!-- 机构树选择机构员工 -->
+			<result name="orgtreeEmple">/view/back/selectempl/selectEmple.jsp</result>
+			<!-- 机构树页面-添加查阅人 -->
+			<result name="orgTreeConaccess">/view/back/selectempl/orgTreeForconaccess.jsp</result>
+			<!-- 密码修改页面 -->
+			<result name="changePage">/view/back/empl/changepassword.jsp</result>
+			<!-- 密码修改成功 -->
+			<result name="changeSuc">/view/back/empl/changepassword.jsp</result>
+			<!-- 分配角色成功页面 -->
+			<result name="addRoleSuc">/view/common/pub_success.jsp</result>
+			<!-- 失败页面 -->
+			<result name="fail">/view/common/pub_fail.jsp</result>
+			<!-- 分配角色页面 -->
+			<result name="addRolePage">/view/back/empl/selectRole.jsp</result>
+			<!-- 工作流中人员选择页面 -->
+		    <result name="workflowEmp">/view/workflow/list_person.jsp</result>
+		    <result name="toCustTree">/WEB-INF/view/customer/queryEmployee.jsp</result>
+		    <result name="toOrgTree">/WEB-INF/view/customer/queryOrg.jsp</result>
+		</action>
+		
+			<!-- 组织用于生成dhtmltree的xml文档 -->
+		<action name="createXML" class="createXMLAction" method="loadXML"></action>
+	</package>
+</struts>

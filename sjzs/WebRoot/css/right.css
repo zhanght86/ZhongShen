@@ -1,0 +1,887 @@
+/* CSS Document */
+body{ text-align:left; margin-left:10px;font-size:12px; background:url(../images/bodybg.jpg); }	
+#main{ margin-left:0; margin-right:auto;}
+.table{ width:95%;border-collapse: collapse;margin:0;padding:0;font-size:12px;}
+.table caption{background:url("../images/tdbg.jpg") repeat-x;height:27px;line-height:27px;font-weight:bold;font-size:14px;color:#002e73;}
+.table thead td{background:#c1d4f6;font-weight:bold;height:30px;}
+/*.table thead th{background:#e9f0fc;font-weight:bold;}*/
+.table thead th{background:#dde8fc;font-weight:bold;}
+.table tfoot td{background:#dde8fc;height:30px;padding:0 10px;border:none;}
+.table,td{border: 1px solid #8db2e3;padding:2px;}		
+.table td{ border: 1px solid #8db2e3;padding:2px; }
+.table th{ border: 1px solid #8db2e3;padding:2px; line-height:30px;}
+.hidden td{border:0}	
+.bottomTd{background:#dde8fc;height:30px;padding:0 10px;border:none;}
+.contentTd{ background:#ffffff; height:30px;}
+.onmouseover{ background:#fff7ea; height:30px;}
+.login_btn {
+	background: url(../images/zhuanfa.jpg) no-repeat;
+	width: 84px;
+	height: 22px;
+	line-height: 22px;
+	cursor: pointer;
+	color: #9BBCDD;
+	font-weight: bold;
+	border: none;
+	cursor:hand;
+}
+.table a:link{ color:#000000; text-decoration:none;}
+.table a:hover{ color:#FF0000; text-decoration:none;}
+.table a:visited{ color:#000000; text-decoration:none;}
+.hidden a:link{ color:#000000; text-decoration:none;}
+.hidden a:hover{ color:#FF0000; text-decoration:none;}
+.hidden a:visited{ color:#000000; text-decoration:none;}
+.table2{border-collapse: collapse;font-size:12px; }
+.table2 caption{background:url("../images/tdbg.jpg") repeat-x;height:27px;line-height:27px;font-weight:bold;font-size:14px;color:#002e73;}
+.table2,td{border: 1px solid #8db2e3;}		
+.table2 td{ border-top:0;border-right:0}
+.table2 a:link{ color:#000000; text-decoration:none;}
+.table2 a:hover{ color:#FF0000; text-decoration:none;}
+.table2 a:visited{ color:#000000; text-decoration:none;}
+.table3{ width:90%;border-collapse: collapse; }
+.table3,td{border: 1px solid #8db2e3;}		
+.table3 td{ border-top:0;border-right:0}
+.tdpadding{ padding-left:10px;}
+
+.input,.select{color:#666666;padding:1px;}
+#fileList, #fileList li{list-style-image:url(../images/fujian.gif);}
+.fileList, .fileList li{list-style-image:url(../images/fujian.gif);}
+.resetbtn{
+          width:62px;    
+          height:22px;    
+          background:url("../images/buttons/reinput.gif") no-repeat center;    
+          font-size:0;    
+          line-height:0;    
+          border: 0px;
+          cursor:hand;
+	}
+.savebtn{
+          width:93px;    
+          height:27px;    
+          background:url("../images/buttons/save.gif") no-repeat center;    
+          font-size:0;            
+          line-height:0;    
+          border: 0px;
+          cursor:hand;
+	}	
+.backbtn{
+          width:93px;    
+          height:27px;    
+          background:url("../images/buttons/t_back.gif") no-repeat center;    
+          font-size:0;            
+          line-height:0;    
+          border: 0px;
+          cursor:hand;
+	}
+.selectUnit{ 
+          width:93px;    
+          height:27px;    
+          background:url("../images/buttons/select.gif") no-repeat center;      
+          font-size:0;            
+          line-height:0;    
+          border: 0px;
+          cursor:hand;
+	}
+.searchbtn{
+		 width:93px;    
+         height:27px;    
+         background:url("../images/buttons/t_search.gif") no-repeat center;    
+         font-size:0;            
+         line-height:0;    
+         border: 0px;
+         cursor:hand;
+	}
+.ckxxbtn{
+		 width:93px;    
+         height:27px;    
+         background:url("../images/buttons/ckxx.gif") no-repeat center;    
+         font-size:0;            
+         line-height:0;    
+         border: 0px;
+         cursor:hand;
+	}
+.addbtn{
+		 width:93px;    
+         height:27px;    
+         background:url("../images/buttons/t_add.gif") no-repeat center;    
+         font-size:0;            
+         line-height:0;    
+         border: 0px;
+         cursor:hand;
+	}
+.modifybtn{
+		 width:93px;    
+         height:27px;    
+         background:url("../images/buttons/t_modify.gif") no-repeat center;    
+         font-size:0;            
+         line-height:0;    
+         border: 0px;
+         cursor:hand;
+	}
+.deletebtnn{
+		 width:93px;    
+         height:27px;    
+         background:url("../images/buttons/t_delete.gif") no-repeat center;    
+         font-size:0;            
+         line-height:0;    
+         border: 0px;
+         cursor:hand;
+	}
+.inputbtn{
+		 width:93px;    
+         height:27px;    
+         background:url("../images/buttons/t_input.gif") no-repeat center;    
+         font-size:0;            
+         line-height:0;    
+         border: 0px;
+         cursor:hand;
+	}
+.outbtn{
+	 	width:93px;    
+        height:27px;    
+        background:url("../images/buttons/t-export.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+}
+.outReportbtn{
+	 	width:93px;    
+        height:27px;    
+        background:url("../images/buttons/t-buttonReport.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+}
+.outallbtn{
+	 width:93px;    
+        height:27px;    
+        background:url("../images/buttons/all.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+}
+.typebtn{
+	 width:93px;    
+        height:27px;    
+        background:url("../images/buttons/type.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+}
+.agentbtn{
+	 width:93px;    
+        height:27px;    
+        background:url("../images/buttons/agent.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+}
+.powerbtn{
+	 width:93px;    
+        height:27px;    
+        background:url("../images/buttons/power.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+}
+.groupbtn{
+	 width:113px;    
+        height:27px;    
+        background:url("../images/buttons/group.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+}
+.addRolebtn{
+	 width:93px;    
+        height:27px;    
+        background:url("../images/buttons/addrole.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+}
+.gavePowerbtn{
+	 width:93px;    
+        height:27px;    
+        background:url("../images/buttons/gavepower.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+}
+.tongjibtn{
+	 width:93px;    
+        height:27px;    
+        background:url("../images/buttons/tongji.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+}
+.pointbtn{
+	 width:100px;    
+        height:27px;    
+        background:url("../images/buttons/point.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+}
+.oafeedbtn{
+	 width:100px;    
+        height:27px;    
+        background:url("../images/buttons/oafeed.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+}
+.keybtn{
+	 width:100px;    
+        height:27px;    
+        background:url("../images/buttons/key.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+}
+.findunitbtn{
+	 width:100px;    
+        height:27px;    
+        background:url("../images/buttons/selectunit.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+}
+.findmanbtn{
+		 width:100px;    
+        height:27px;    
+        background:url("../images/buttons/selectman.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+}
+.feedbtn{
+	 width:100px;    
+        height:27px;    
+        background:url("../images/buttons/feed.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+}
+.replybtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/reply.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+.broswerBtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/broswerBtn.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+.resetallbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/resetall.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+.kongbtn{
+	
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/kong.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+.kong2btn{
+	
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/kong2.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+.importbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/import.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+.closebtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/close1.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+.managebtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/manager.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+	
+.createprobtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/creatpro.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+.workbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/work.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+		
+.resetPassWordbtn{
+	width:93px;    
+        height:27px;    
+        background:url("../images/buttons/resetPassWord.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+}		
+.confirmbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/confrim.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+.uploadbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/uploadbtn.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+.sendEgovdocbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/sendEgovdoc.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+.clearbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/clear.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+	.nextbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/next.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+	.oredrbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/order.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+	.addParambtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/addParam.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+	.testbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/test.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+	.addMenubtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/addMenu.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+	.morebtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/more.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+	.fullbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/full.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+	.filterbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/filter.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+	.button-submit {
+		background: -webkit-gradient(linear, left top, left bottom, from(#fcfcfc), to(#e9e9e9));
+		background: -moz-linear-gradient(top,  #fcfcfc,  #e9e9e9);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#e9e9e9');
+		-moz-border-radius: 3px;
+		-webkit-border-radius: 3px;
+		border-radius: 3px;
+		color: #333 !important;
+		border: 1px solid #999;
+		cursor: pointer;
+		padding: 4px 20px;
+		text-align: center;
+		text-decoration: none !important;
+		vertical-align: middle;
+	}	
+	.listTreeName {
+		margin-top: -5px;
+		padding: 0;
+		position: absolute;
+		visibility: hidden;
+		border-top: 1px solid white;
+		list-style: none;
+		border: 1px #8DB2E3 solid;
+		background-color: #FEFFDD;
+		overflow: visible;
+	}
+	.listTreeName li{
+		list-style: none;
+		line-height: 20px;
+		border-bottom: 1px #8DB2E3 solid;
+	}
+	.createViewbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/createViewbtn.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+	.delViewbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/delViewbtn.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+	.ylbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/yl.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+	.setChartbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/setChart.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+	.showChartbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/showChart.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+	.localbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/local.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+	.assessauditbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/assessaudit.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+	.auditStepbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/auditStep.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+	.bzfjbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/bzfj.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+	.pjjlbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/pjjl.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+	.xxjlbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/xxjl.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+	.yybtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/yy.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+	.jroalcbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/jroalc.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+	.scsjbgbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/scsjbg.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+	.outputbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/output.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+	.tjspbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/tjsp.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+	.spbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/sp.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+	.qgbcbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/qgbc.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+	.tjbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/tj.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+	.tjhbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/tjh.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+	.yksqzbbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/yksqzb.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+	.cytbbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/cytb.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+	.qbtbbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/qbtb.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+	.tongyibtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/tongyi.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+	.butongyibtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/butongyi.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+	.tjspbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/tjsp.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+	.dhsyjbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/dhsyj.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+	.dhqcrbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/dhqcr.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+	.xmtbbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/xmtb.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+	.tiaozengbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/t_increase.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+	.tiaojianbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/t_reduce.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+		.xiayibubtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/xiayibubtn.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+	.tongyiokbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/tongyiokbtn.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+	.bcfjbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/bcfj.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+	.bcfjbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/bcfj.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+	.ckxdjlbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/ckxdjl.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+	.ckfjbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/ckfj.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+	.qgbcbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/qgbc.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+
+	.bdxmbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/bdxm.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+	.dzqzbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/dzqz.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+
+

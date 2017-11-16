@@ -1,0 +1,60 @@
+@CHARSET "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+	font-size: 15px;
+	background-color:e5edef;
+}
+a:FOCUS,a:LINK, a:VISITED{
+	color: blue;
+}
+.main{
+	width:95%;
+	text-align: center;
+	margin-top:150px;
+}
+.main table{
+	width:400px;
+	height:350px;
+	margin:0 auto 0 auto;
+	background-color: white;
+}
+.main table .title{
+	height:70px;
+}
+
+.main table td{
+	height:50px;
+}
+.main table .a{
+	text-align: right;
+}
+.main table .b{
+	text-align:left;
+	width:250px;
+}
+.main table .c{
+	text-align: center;
+}
+.main table .c input{
+	margin-top:10px;
+}
+.main table .b input{
+	width:150px;
+	margin-left:5px;
+}
+.main table .b div{
+	font-size:12px;
+	color:red;
+}
+.main table font{
+	font-size: 30px;
+	font-family: fantasy;
+}
+.main table a{
+	font-size:12px;
+	float: right;
+	color:black;
+}
+

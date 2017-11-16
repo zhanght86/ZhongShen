@@ -1,0 +1,532 @@
+@CHARSET "UTF-8";
+*{
+	font-family: arial;
+}
+
+html ,body{
+	padding:0;
+	margin:0;
+	font: 12px arial;
+	color:#666666;
+	background: url("../../images/fore/back_all.png") repeat;
+}
+.main_top{
+	width:100%;
+	height:170px;
+	margin:0 auto;
+	background-color: #f4f4f4;
+}
+.main_top .top_user{
+	width:100%;
+	height:30px;
+	line-height:30px;
+	text-align: right;
+}
+.main_top .top_user a{
+	font-size:14px;
+	line-height:30px;
+	margin-right:1px;
+	color:#00c;
+	text-decoration: none;
+}
+.main_top .top_user a:hover{
+	color:red;
+	text-decoration: underline;
+}
+.main_top .top_search{
+	width:800px;
+	height: 60px;
+	margin: 0 auto;
+}
+.main_top .top_search a{
+	color: blue;
+}
+.top_search .s_logo{
+	width:185px;
+	height:60px;
+	float: left;
+}
+.top_search .s_logo img{
+	border:none;
+}
+.top_search .s_search{
+	width:460px;
+	float: left;
+}
+.top_search .s_each{
+	width: 450px;
+	height:25px;
+	line-height:25px;
+	text-align: center;
+}
+.top_search .s_each a{
+	font-size: 14px;
+	margin-left: 7px;
+}
+.top_search .s_text{
+	width:450px;
+	height:25px;
+	line-height: 25px;
+	text-align: center;
+}
+.top_search .s_text input{
+	width:420px;
+	height:25px;
+}
+.top_search .s_but{
+	width:90px;
+	height:40px;
+	line-height:40px;
+	padding-top:10px;
+	margin-top:10px;
+	text-align:center;
+	float: left;
+}
+.top_search .s_but input{
+	width:90px;
+	height:32px;
+	background: url("../../images/fore/but_back.png") repeat-x;
+	border: 1px black solid;
+}
+.top_search .s_but input:hover{
+	cursor: pointer;
+}
+.top_search .s_but input:ACTIVE {
+	background: #DDDDDD;
+}
+.main_top .top_menu{
+	width: 100%;
+	height:40px;
+	margin-top:20px;
+	background:url("../../images/fore/menu_back02.png") repeat-x;
+}
+.top_menu .menu_each{
+	width:900px;
+	height:32px;
+	line-height: 32px;
+	margin: 0 auto;
+	text-align: center;
+}
+.menu_each table{
+	width:100%;
+	height:100%;
+	text-align: center;
+}
+.menu_each table td{
+	color: #f4f4f4;
+}
+.menu_each table td:hover{
+	background-color: #77787b;
+	cursor:pointer;
+	color:black;
+}
+.menu_each table td a{
+	padding-top:7px;
+	padding-left:20px;
+	padding-right:20px;
+	padding-bottom:7px;
+	color:#f4f4f4;
+	text-decoration: none;
+	font-weight: bold;
+}
+.menu_each table td a:hover{
+	color:black;
+}
+.main_cont{
+	width:940px;
+	margin: 0 auto;
+	background-color: white;
+}
+.main_cont .main_bann{
+	width:100%;
+	
+	text-align: center;
+}
+.main_cont .main_bann img{
+	border: none;
+}
+.main_cont .main_each{
+	width: 100%;
+	margin-top:10px;
+	color: #666666;
+}
+/**********控制各个具体的***********/
+.main_each .each_cont_sjfg,.each_cont_dxyj,.each_cont_ffal,.each_cont_sjdh,.each_cont_sjsx,.each_cont_ssfa{
+	width:300px;
+	float: left;
+	padding-top:5px;
+	background-color: white;
+}
+.each_cont_dxyj,.each_cont_ffal{
+	padding-left:18px;
+}
+.each_cont_sjdh,.each_cont_ssfa{
+	width:460px;
+}
+.each_cont_ssfa{
+	padding-left:18px;
+}
+
+/**上面，控制整体高度宽度（每个）**/
+/***********/
+.each_cont_sjfg .cont_title,.each_cont_dxyj .cont_title,.each_cont_ffal .cont_title,.each_cont_sjdh .cont_title,.each_cont_ssfa .cont_title {
+	width:100%;
+	height:32px;
+	vertical-align:middle;
+	background: url("../../images/fore/title_back03.png") repeat-x;
+}
+.cont_title .title_logo{
+	margin-left: 10px;
+	height: 30px;
+	line-height:32px;
+	float: left;
+}
+.cont_title b{
+	font-size:16px;
+	line-height: 30px;
+	margin-left: 10px;
+	color: #3564d3;
+}
+.cont_title .title_more{
+	float: right;
+	margin-right: 10px;
+	margin-top:10px;
+	line-height:32px;
+}
+/*****上面，控制标题部分****/
+.each_cont_sjfg .cont_biref,.each_cont_dxyj .cont_biref,.each_cont_ffal .cont_biref,.each_cont_sjdh .cont_biref,.each_cont_ssfa .cont_biref {
+	width:100%;
+	height:70px;
+	padding-top:5px;
+	padding-left:5px;
+	background-color: white;
+	border-bottom: 1px dashed #c9c9c9;
+}
+.each_cont_sjdh .cont_biref,.each_cont_ssfa .cont_biref{
+	height:60px;
+	padding-top:2px;
+}
+.cont_biref .biref_logo{
+	width:60px;
+	height:60px;
+	float: left;
+	display: inline;
+}
+
+.cont_biref span{
+	width:76%;
+	height:55px;
+	margin-left:8px;
+	margin-top:5px;
+	float: left;
+	color: black;	
+}
+.each_cont_sjdh .cont_biref span,.each_cont_ssfa .cont_biref span{
+	padding-top:5px;
+	height:45px;
+	width:84%;
+}
+/*****上面，控制介绍部分****/
+.each_cont_sjfg .cont_list,.each_cont_dxyj .cont_list,.each_cont_ffal .cont_list,.each_cont_sjdh .cont_list,.each_cont_ssfa .cont_list{
+	width:100%;
+	height:150px;
+	overflow: hidden;
+	background-color: white;
+	float: left;
+}
+.cont_list ul{
+	padding:0;
+	margin-left:13px;
+	list-style-image: url("../../images/fore/li_log.png");
+	
+}
+.cont_list ul li{
+	line-height: 17px;
+	font-size: 12px;
+	width:285px;
+	padding-top:2px;
+	padding-bottom: 2px;
+	padding-left:3px;
+}
+.each_cont_sjdh .cont_list ul li,.each_cont_ssfa .cont_list ul li{
+	width:440px;
+}
+.cont_list ul li a{
+	color:#666666;
+	text-decoration: none;
+	white-space:nowrap;
+	overflow: hidden;
+}
+.cont_list ul li:hover{
+	background-color: #e5f4ee;
+}
+.cont_list ul li a:hover{
+	color: red;
+	text-decoration: underline;
+}
+/*****************/
+/***单独控制审计事项***/
+.each_cont_sjsx{
+	width:940px;
+	background: url("../../images/fore/sjsx_back.png") repeat-x;
+	background-color: white;
+	display: none;
+}
+.each_cont_sjsx img{
+	width:60px;
+	height:60px;
+	float: left;
+	margin-left:10px;
+	margin-top:25px;
+	margin-bottom:65px;
+}
+.each_cont_sjsx .cont_title{
+	width: 850px;	
+	float:left;
+	height: 25px;
+	line-height:25px;
+	margin-top:5px;
+}
+.each_cont_sjsx .cont_title b{
+	float:left;
+	color:black;
+	font-size:14px;
+		
+}
+.each_cont_sjsx .cont_title .title_more{
+	width:35px;
+	height:12px;
+	color:red;
+	margin:0;
+	padding:0;
+	float: right;
+	margin-right: 10px;
+	margin-top:5px;
+	line-height:15px;
+}
+
+.each_cont_sjsx .cont_biref{
+	width:200px;
+	height:100px;
+	float: left;
+}
+.each_cont_sjsx .cont_biref .biref_cont{
+	width: 190px;
+	height:80px;
+	margin-top:15px;
+	margin-left:5px;
+	overflow: hidden;
+	color: black;
+}
+.each_cont_sjsx .cont_list{
+	width:666px;
+	margin-right:3px;
+	height: 125px;
+	overflow:hidden;
+	float: right;
+}
+.each_cont_sjsx .cont_list ul{
+	margin-left:5px;
+	list-style:none;
+}
+.each_cont_sjsx .cont_list ul li{
+	width:660px;	
+	height:17px;
+}
+.each_cont_sjsx .cont_list ul li table{
+	border: none;
+	width: 660px;
+	height:100%;
+	text-align: left;
+	overflow: hidden;
+}
+.each_cont_sjsx .cont_list ul li table .a{
+	width: 170px;
+	overflow: hidden;
+}
+.each_cont_sjsx .cont_list ul li table .a div{
+	width:160px;
+	overflow: hidden;
+	white-space: nowrap;
+}
+.each_cont_sjsx .cont_list ul li table .b{
+	width:260px;
+	overflow:hidden;
+}
+.each_cont_sjsx .cont_list ul li table .b div{
+	width:250px;
+	overflow: hidden;
+	white-space: nowrap;
+}
+.each_cont_sjsx .cont_list ul li table .c{
+	width:150px;
+	overflow: hidden;
+}
+.each_cont_sjsx .cont_list ul li table .c div{
+	width:140px;
+	overflow: hidden;
+	white-space: nowrap;
+}
+.each_cont_sjsx .cont_list ul li table .d{
+	width:70px;
+}
+.each_cont_sjsx .cont_list ul li table .d div{
+	width:65px;
+	overflow: hidden;
+	white-space: nowrap;
+	
+}
+/****上面，控制具体列表部分****/
+/************************/
+/****每个具体页面的样式****/
+.cont_list h3 {
+	margin: 0;
+	line-height: 30px;
+	font-size: 14px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-left:10px;
+	color: #333;
+	font-weight: bold;
+	background: url("../../images/fore/h3_back.png") repeat-x;
+}
+.cont_list .cont_each_list a {
+	color: #666666;;
+	font-size: 13px;
+	text-decoration: none;
+}
+
+.cont_list .cont_each_list a:hover {
+	color: red;
+	text-decoration: underline;
+}
+
+.cont_list .cont_each_list .list_cont,.cont_list .cont_each_list .list_cont_sjsx {
+	width: 100%;
+	height: 23px;
+	border-bottom: #fbfbfb 1px solid;
+}
+.cont_list .cont_each_list .sp_clas{
+	display: hidden;
+}
+.cont_list .list_cont:hover,.cont_list .list_cont_sjsx:hover {
+	cursor: pointer;
+}
+
+.cont_list .cont_each_list .list_cont .sp_title
+	{
+	width: 245px;
+	line-height: 22px;
+	padding-left: 5px;
+	white-space:nowrap;
+	overflow: hidden;
+	display: inline;
+	float: left;
+}
+.cont_list .cont_each_list .list_cont .sp_title a{
+	width:245px;
+	overflow: hidden;
+	line-height:22px;
+}
+.cont_list .cont_each_list .list_cont .sp_content
+	{
+	width: 570px;
+	line-height: 22px;
+	padding-left: 5px;
+	margin-left:30px;
+	white-space:nowrap;
+	overflow: hidden;
+	display: inline;
+	float: left;
+}
+
+.cont_list .cont_each_list .list_cont .sp_date,.cont_list .cont_each_list .list_cont_sjsx .sp_date
+	{
+	width: 70px;
+	line-height: 22px;
+	padding-left: 5px;
+	overflow: hidden;
+	display: inline;
+	float: right;
+}
+/****单独控制审计事项显示*******/
+.list_cont_sjsx .sp_title{
+	width:180px;
+	line-height: 22px;
+	padding-left: 5px;
+	white-space:nowrap;
+	overflow: hidden;
+	display: inline;
+	float: left;
+}
+.list_cont_sjsx .sp_title a{
+	width:178px;
+	overflow: hidden;
+	line-height:22px;
+}
+.list_cont_sjsx .sp_content{
+	width:450px;
+	line-height: 22px;
+	padding-left: 5px;
+	margin-left:15px;
+	white-space:nowrap;
+	overflow: hidden;
+	display: inline;
+	float: left;
+}
+.list_cont_sjsx .sp_clas{
+	width:150px;
+	line-height: 22px;
+	padding-left: 10px;
+	white-space: nowrap;
+	overflow: hidden;
+	display:inline;
+	float: left:
+}
+
+/****-----------------*****/ 
+.cont_list .cont_each_list {
+	width: 100%;
+	height: 590px;
+	margin-top: 2px;
+	background-color: white;
+	overflow: hidden
+}
+
+.cont_list .cont_each_list .list_cont,.cont_list .cont_each_list .list_cont .sp_title,.cont_list .cont_each_list .list_cont .sp_content,.cont_list .cont_each_list .list_cont .sp_date,.cont_list .cont_each_list .list_cont_sjsx,.cont_list .cont_each_list .list_cont_sjsx .sp_title,.cont_list .cont_each_list .list_cont_sjsx .sp_content,.cont_list .cont_each_list .list_cont_sjsx .sp_date
+	{
+	height: 26px;
+	font-size: 13px;
+}
+
+/***************************/
+/*****我的助手页面主要显示部分*******/
+.cont_main .cont_cont .cont_tag {
+	width: 792px;
+	height: 630px;
+	margin-top: 3px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/****************************/
+.boot{
+	clear:both;
+	width:100%;
+	height:60px;
+	background: url("../../images/fore/boot_back.png") repeat-x;
+	text-align: center;
+	line-height: 60px;
+	font-size: 14px;
+	color: #f4f4f4;
+}
+
+.boot a{
+	color:#f4f4f4;
+	text-decoration: none;
+	font-size: 14px;
+}
+.boot a:hover{
+	color: red;
+	text-decoration: underline;
+}

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+	version="2.0">
+	<description>jsp工具类函数</description>
+	<tlib-version>1.0</tlib-version>
+	<short-name>fu</short-name>
+	<uri>functions</uri>	
+	<function>
+		<description>获取模板编号下对应的初始化路径，便于初始化流程的时候自行提交到相对应的子类流程中处理</description>
+		<name>getTemplateTageByTempID</name>
+		<function-class>com.hnzskj.common.tag.WorkFlowFunctionUtils</function-class>
+		<function-signature>java.lang.String getTemplateTageByTempID(java.lang.String)</function-signature>
+	</function>
+	<function>
+	 <description>用来获取模板的名称</description>
+	 <name>getTemplateName</name>
+	 <function-class>com.hnzskj.common.tag.WorkFlowFunctionUtils</function-class>
+	 <function-signature>java.lang.String getTemplateName(java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+	 <description>获取员工的姓名</description>
+	 <name>getEmployeeName</name>
+	 <function-class>com.hnzskj.common.tag.WorkFlowFunctionUtils</function-class>
+	 <function-signature>java.lang.String getEmployeeName(java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+	 <description>获取工作流实例的状态</description>
+	 <name>setInstanceState</name>
+	 <function-class>com.hnzskj.common.tag.WorkFlowFunctionUtils</function-class>
+	 <function-signature>java.lang.String setInstanceState(java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+	 <description>获取任务的状态</description>
+	 <name>setTaskState</name>
+	 <function-class>com.hnzskj.common.tag.WorkFlowFunctionUtils</function-class>
+	 <function-signature>java.lang.String setTaskState(java.lang.String)</function-signature>
+	</function>
+	
+	<function>
+	 <description>的状态通过实例获取模板编号</description>
+	 <name>getTemplateId</name>
+	 <function-class>com.hnzskj.common.tag.WorkFlowFunctionUtils</function-class>
+	 <function-signature>java.lang.Integer getTemplateId(java.lang.String)</function-signature>
+	</function>
+</taglib>
+

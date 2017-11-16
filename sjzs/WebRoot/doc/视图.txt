@@ -1,0 +1,81 @@
+	
+  CREATE VIEW queryView AS 
+SELECT
+			a.id AS id,
+			a.caption AS title,
+			a.lawContent AS content,
+			'YJ' AS type,
+			a.updatedate AS updatedate,
+			a.note1 AS indexflag,
+			a.deleteflag AS deleteflag,
+			att.attachContentDoc AS attach
+		FROM
+			sjzs_dxyj a
+		LEFT JOIN sjzs_attach att ON a.id = att.attachId
+		UNION ALL
+			SELECT
+				b.id AS id,
+				b.title AS title,
+				b.content AS content,
+				'AL' AS type,
+				b.updatedate AS updatedate,
+				b.note1 AS indexflag,
+				b.deleteflag AS deleteflag,
+				att.attachContentDoc AS attach
+			FROM
+				sjzs_ffal b
+			LEFT JOIN sjzs_attach att ON b.attachId = att.attachId
+			UNION ALL
+				SELECT
+					c.lawId AS id,
+					c.lawName AS title,
+					c.lawContent AS content,
+					'FG' AS type,
+					c.updatedate AS updatedate,
+					c.note1 AS indexflag,
+					c.deleteflag AS deleteflag,
+					att.attachContentDoc AS attach
+				FROM
+					sjzs_sjfg c
+				LEFT JOIN sjzs_attach att ON c.attachid = att.attachId
+				UNION ALL
+					SELECT
+						l.id AS id,
+						l. NAME AS title,
+						l.keyword AS content,
+						'EI' AS type,
+						l.updatedate AS updatedate,
+						l.note1 AS indexflag,
+						l.deleteflag AS deleteflag,
+						att.attachContentDoc AS attach
+					FROM
+						sjzs_ssfn l
+					LEFT JOIN sjzs_attach att ON l.attachid = att.attachId
+					UNION ALL
+						SELECT
+							t.dicid AS id,
+							t.dicName AS title,
+							t.dicMemo AS content,
+							'SX' AS type,
+							t.updatedate AS updatedate,
+							t.note1 AS indexflag,
+							t.deleteflag AS deleteflag,
+							att.attachContentDoc AS attach
+						FROM
+							sjzs_datadic t
+						LEFT JOIN sjzs_attach att ON t.dicid = att.attachId
+						UNION ALL
+							SELECT
+								f.id AS id,
+								f.`name` AS title,
+								f.context,
+								'DH' AS type,
+								f.updatedate AS updatedate,
+								f.note1 AS indexflag,
+								f.deleteflag AS deleteflag,
+								att.attachContentDoc
+							FROM
+								sjzs_sjdh f
+							LEFT JOIN workflowxml g ON g.type = f.id
+							LEFT JOIN sjdh_reference h ON h.xmlId = g.id
+							LEFT JOIN sjzs_attach att ON att.attachId = h.attachId

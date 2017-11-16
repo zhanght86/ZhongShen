@@ -1,0 +1,506 @@
+@CHARSET "UTF-8";
+
+html,body {
+	margin: 0;
+	padding: 0;
+	font: 12px/ 1.333 arial, helvetica, clean;
+	background-color: white;
+}
+
+.cont_all {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+/********标题部分********/
+.cont_all .cont_title {
+	width: 100%;
+	height: 30px;
+}
+
+.cont_all .cont_title div {
+	width: 145px;
+	line-height: 30px;
+	text-align: right;
+	margin-right: 10px;
+	float: right;
+}
+
+.cont_all .cont_title div a {
+	color: blue;
+	font-size: 14px;
+	text-decoration: underline;
+}
+
+.cont_all .cont_title div a:hover {
+	color: red;
+	text-decoration: underline;
+}
+
+/**********主要内容部分*********/
+.cont_main {
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+}
+
+/*******上部分的搜索框*****/
+.cont_main .cont_search {
+	width: 680px;
+	height: 55px;
+}
+
+.cont_main .cont_search table {
+	float: left;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+
+.cont_main .cont_search table .logo {
+	width: 160px;
+	text-align: center;
+	font-size: 30px;
+	font-weight: bold;
+	color: red;
+}
+
+.cont_main .cont_search table .search_menu a {
+	line-height: 18px;
+	font-size: 14px;
+	color: #00c;
+	text-decoration: underline;
+}
+
+.cont_main .cont_search table .search_inp input {
+	height: 25px;
+	width: 400px;
+	margin-top: 2px;
+}
+
+.cont_main .cont_search table .search_but input {
+	width: 90px;
+	height: 30px;
+}
+
+.cont_all .cont_menu {
+	margin-top: 10px;
+	width: 100%;
+	height: 35px;
+	background-image: url("/sjzs/images/fore/menu_back.png");
+	background-repeat: repeat-x;
+}
+
+.cont_all .cont_menu div {
+	width: 800px;
+	height: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.cont_all .cont_menu div table {
+	text-align: center;
+	width: 100%;
+	height: 100%;
+}
+
+.cont_all .cont_menu div table td {
+	border-left: 1px #1e9c68 solid;
+	border-right: 1px #1e9c68 solid;
+	width: 100px;
+}
+
+.cont_all .cont_menu div table td:HOVER {
+	cursor: pointer;
+	background: url("/sjzs/images/fore/hovered_back.png") repeat-x;
+}
+
+.cont_all .cont_menu div table td a {
+	width: 100%;
+	height: 100%;
+	line-height: 34px;
+	font-size: 14px;
+	color: #fff;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.cont_all .cont_main .cont_cont {
+	width: 100%;
+	height: 640px;
+	margin-top: 5px;
+	padding-top: 3px;
+	background-color: #eef9f5;
+}
+
+.cont_all .cont_main #cont_cont {
+	height: 940px;
+}
+
+.cont_all .cont_main .cont_cont h3 {
+	margin: 0;
+	line-height: 18px;
+	margin-left: 20px;
+	font-size: 14px;
+	margin-top: 10px;
+	color: #333;
+	font-weight: bold;
+}
+
+.cont_all .cont_main .cont_cont .cont_list {
+	width: 750px;
+	height: 120px;
+	margin-left: 25px;
+	margin-top: 5px;
+	background-color: white;
+	overflow: hidden
+}
+
+.cont_all .cont_main .cont_cont .cont_list a {
+	color: black;
+	font-size: 13px;
+	text-decoration: none;
+}
+
+.cont_all .cont_main .cont_cont .cont_list a:hover {
+	color: red;
+	text-decoration: underline;
+}
+
+/***----------------------**/
+.cont_cont .cont_each_list a {
+	color: black;
+	font-size: 13px;
+	text-decoration: none;
+}
+
+.cont_cont .cont_each_list a:hover {
+	color: red;
+	text-decoration: underline;
+}
+
+.cont_cont .cont_list .list_cont,.cont_cont .cont_each_list .list_cont {
+	width: 100%;
+	height: 23px;
+	border-bottom: #fbfbfb 1px solid;
+}
+
+.cont_cont .list_cont:hover {
+	cursor: pointer;
+}
+
+.cont_cont .cont_list .list_cont .sp_title,.cont_cont .cont_each_list .list_cont .sp_title
+	{
+	width: 130px;
+	line-height: 22px;
+	padding-left: 5px;
+	overflow: hidden;
+	display: inline;
+	float: left;
+}
+
+.cont_cont .cont_list .list_cont .sp_content,.cont_cont .cont_each_list .list_cont .sp_content
+	{
+	width: 520px;
+	line-height: 22px;
+	padding-left: 5px;
+	overflow: hidden;
+	display: inline;
+	float: left;
+}
+
+.cont_cont .cont_list .list_cont .sp_content * {
+	display: inline;
+	width: 10px;
+	overflow: auto;
+}
+
+.cont_cont .cont_list .list_cont .sp_date,.cont_cont .cont_each_list .list_cont .sp_date
+	{
+	width: 75px;
+	line-height: 22px;
+	padding-left: 5px;
+	overflow: hidden;
+	display: inline;
+	float: right;
+}
+
+/****-----------------*****/ /****每个具体页面的样式****/
+.cont_cont .cont_each_list {
+	width: 750px;
+	height: 590px;
+	margin-left: 25px;
+	margin-top: 5px;
+	background-color: white;
+	overflow: hidden
+}
+
+.cont_cont .cont_each_list .list_cont,.cont_cont .cont_each_list .list_cont .sp_title,.cont_cont .cont_each_list .list_cont .sp_content,.cont_cont .cont_each_list .list_cont .sp_date
+	{
+	height: 26px;
+	font-size: 13px;
+}
+
+.cont_cont .cont_each_list .list_cont .sp_content * {
+	font: 13px/ 1.333 arial, helvetica, clean;
+	display: inline;
+	overflow: hidden;
+}
+
+/*****我的助手页面主要显示部分*******/
+.main_cont .cont_cont .cont_tag {
+	width: 792px;
+	height: 630px;
+	margin-top: 3px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.main_cont .cont_cont .cont_tag table {
+	width: 100%;
+	height: 100%;
+}
+
+.cont_tag table .narr,.cont_tag table .grzx,.cont_tag table .wdsc {
+	width: 130px;
+	height: 30px;
+	text-align: center;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.cont_tag .narr,.cont_tag .grzx,.cont_tag .wdsc,.cont_tag .narrbot {
+	background-color: #fafdfc;
+}
+
+.cont_tag .narrbot {
+	height: 530px;
+}
+
+.grzx:hover,.wdsc:hover {
+	border-top-width: 2px;
+	border-bottom-width: 2px;
+	cursor: pointer;
+	background-color: #ecf8f3;
+}
+
+.cont_tag .tag_main {
+	width: 660;
+	height: 620px;
+	margin: 0;
+}
+
+/******我的上传******/
+.tag_main .wdsc_cont .wdsc_but {
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+}
+
+.tag_main .wdsc_cont .wdsc_but input {
+	width: 100px;
+	height: 25px;
+	margin-left: 10px;
+}
+
+.tag_main .wdsc_cont .wdsc_but input:hover {
+	cursor: pointer;
+}
+
+.tag_main .wdsc_cont .wdsc_main {
+	width: 640px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.tag_main .wdsc_cont .wdsc_main table {
+	width: 100%;
+}
+
+.tag_main .wdsc_cont .wdsc_main table .tab_tit td {
+	border-left: #e5e5e5 solid 1px;
+	border-bottom: solid #c8dbd3 1px;
+}
+
+.tag_main .wdsc_cont .wdsc_main table td span {
+	margin-top: 5px;
+	margin-left: 5px;
+}
+
+.tag_main .wdsc_cont .wdsc_main table .tab_cont:hover {
+	background-color: #fafdfc;
+	cursor: pointer;
+}
+
+.tag_main .wdsc_cont .wdsc_main table .tab_cont_hover {
+	background-color: #fafdfc;
+	cursor: pointer;
+}
+
+.tag_main .wdsc_cont .wdsc_main table .tab_cont td {
+	line-height: 35px;
+	border-bottom: #e6e6e6 1px solid;
+}
+
+/***********/ /****个人中心****/
+.tag_main .grzx_cont {
+	width: 100%;
+	height: 100%;
+}
+
+.grzx_cont .grzx_left {
+	width: 150px;
+	height: 230px;
+	background-color: #e5f4ee;
+	margin-top: -4px;
+	float: left;
+	border-right: #d1e4dc 1px solid;
+}
+
+.grzx_cont .grzx_left .grzx_per_info {
+	width: 100px;
+	height: 200px;
+	margin: 0 auto;
+	margin-top: 10px;
+}
+
+.grzx_per_info b,.grzx_per_info img,.grzx_per_info span {
+	display: block;
+}
+
+.grzx_per_info b {
+	line-height: 20px;
+	margin-left: 5px;
+}
+
+.grzx_per_info img {
+	width: 100%;
+	height: 120px;
+	margin-top: 10px;
+}
+
+.grzx_per_info span {
+	margin-top: 10px;
+	line-height: 30px;
+}
+
+.grzx_cont .grzx_right {
+	width: 505px;
+	float: right;
+}
+
+.grzx_right .grzx_info {
+	width: 480px;
+	height: 100px;
+	margin: 0 auto;
+	margin-top: 5px;
+}
+
+.grzx_right .grzx_info table {
+	width: 460px;
+	height: 100%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.grzx_right .grzx_info table .info_main td {
+	width: 100px;
+	height: 50px;
+}
+
+.grzx_info .info_title {
+	width: 60px;
+	height: 30px;
+	border-bottom: #1d9765 2px solid;
+}
+
+.grzx_info .info_abc {
+	border-bottom: #ecf8f3 2px solid;
+}
+
+.grzx_info .info_title b {
+	line-height: 30px;
+	font-size: 15px;
+}
+
+.grzx_right .grzx_info table .info_main td b {
+	display: block;
+	font-size: inherit;
+	color: #333;
+}
+
+.grzx_right .grzx_info table .info_main td span {
+	display: block;
+	color: #e67201;
+}
+
+.grzx_right .grzx_info table .info_main td {
+	background-color: #f8fcfb;
+	border: #d1e4de 1px solid;
+	border-right: none;
+}
+
+.grzx_right .grzx_main {
+	width: 480px;
+	margin: 0 auto;
+	margin-top: 10px;
+}
+
+.grzx_right .grzx_main table {
+	width: 100%;
+	height: 100%;
+}
+
+.grzx_right .grzx_main table .main_title td {
+	text-align: left;
+	background-color: #ecf8f3;
+	height: 30px;
+	border-bottom: white 1px solid;
+}
+
+.grzx_right .grzx_main table .main_title td span {
+	line-height: 30px;
+	margin-left: 10px;
+}
+
+.grzx_main .main_cont,.grzx_main .main_cont_title {
+	height: 35px;
+}
+
+.grzx_main .main_cont:hover {
+	cursor: pointer;
+}
+
+.grzx_main .main_cont_title td {
+	border-bottom: #c8dbd3 1px solid;
+}
+
+.grzx_main .main_cont td {
+	border-bottom: #fbfbfb 1px solid;
+}
+
+.grzx_main .main_cont td span,.grzx_main .main_cont_title td span {
+	line-height: 30px;
+	margin-left: 10px;
+}
+
+/*************/
+.boot {
+	width: 100%;
+	height: 60px;
+	text-align: center;
+	line-height: 60px;
+	font-size: 16px;
+}
+
+.boot a {
+	color: #333;
+}
+
+.boot a:hover {
+	color: red;
+}

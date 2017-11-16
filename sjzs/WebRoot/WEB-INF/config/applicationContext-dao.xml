@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+<!-- ＝＝＝＝＝＝系统管理模块配置开始＝＝＝＝＝＝＝ -->
+	<!-- 员工模块 -->
+	<bean id="employeeDao" class="com.hnzskj.persist.dao.system.impl.EmployeeDaoImpl"
+		scope="prototype">
+		<property name="powerDao" ref="powerDao" />
+		<property name="roleDao" ref="roleDao" />
+	</bean>
+	<!-- 角色模块 -->
+	<bean id="roleDao" class="com.hnzskj.persist.dao.system.impl.RoleDaoImpl"
+		scope="prototype">
+		<property name="powerDao" ref="powerDao" />
+	</bean>
+	<!-- 功能模块 -->
+	<bean id="powerDao" class="com.hnzskj.persist.dao.system.impl.PowerDaoImpl"
+		scope="prototype"></bean>
+	<!-- 操作日志 -->
+	<bean id="operationLogDao" class="com.hnzskj.persist.dao.system.impl.OperationLogDaoImpl"
+		scope="prototype"></bean>
+	<!-- 系统管理模块结束 -->
+
+	<!-- 系统配置文件操作开始  田玉江 -->
+	<bean id="systemXmlDao" class="com.hnzskj.persist.dao.systemxml.impl.SystemXmlDaoImpl">
+	</bean>
+	<!-- 系统配置文件操作结束  田玉江 -->
+
+	<!-- 短信发送记录模块开始 -->
+	<bean id="sMSDao" class="com.hnzskj.persist.dao.system.impl.SMSDaoImpl" scope="prototype"/>
+	<!-- 短信发送记录模块结束 -->
+
+<!-- ＝＝＝＝＝＝系统管理模块配置结束＝＝＝＝＝＝＝ -->
+
+
+	 <!-- 工作流模块-->
+	 <!-- 工作流模板 -->
+	 <bean id="templateDao" class="com.hnzskj.persist.dao.flow.impl.TemplateDaoImpl"></bean>
+	 <!-- 工作流环节 -->
+	 <bean id="tacheDao" class="com.hnzskj.persist.dao.flow.impl.TacheDaoImpl"></bean>
+	 <!-- 工作流连线 -->
+	 <bean id="lineDao" class="com.hnzskj.persist.dao.flow.impl.LineDaoImpl"></bean>
+	 <!-- 工作流模板实例 -->
+	 <bean id="instanceWFDao" class="com.hnzskj.persist.dao.flow.impl.InstanceWFDaoImpl"></bean>
+	 <!-- 工作流模板实例列表 -->
+	 <bean id="instanceInfoDao" class="com.hnzskj.persist.dao.flow.impl.InstanceExceInfoDaoImpl"></bean>
+	 <!-- 工作流任务 -->
+	 <bean id="taskDao" class="com.hnzskj.persist.dao.flow.impl.TaskListDaoImpl"></bean>
+	 <!-- 工作流模板审批意见 -->
+	 <bean id="flowMessDao" class="com.hnzskj.persist.dao.flow.impl.FlowMessDaoImpl"></bean>
+	 <bean id="phrasesDao" class="com.hnzskj.persist.dao.flow.impl.PhrasesDaoImpl"></bean>
+	 
+	 <!-- 工作流调用者对象 -->
+	 <bean id="shenDao" class="com.hnzskj.persist.dao.wflow.impl.ShenPiDaoImpl"></bean>
+	
+	 <bean id="workFlowDao" class="com.hnzskj.persist.dao.sjzs.impl.WorkFlowDaoImpl"></bean>
+	 
+	 <!-- 保存流程图xml时的参照 -->
+	 <bean id="flowRefDao" class="com.hnzskj.persist.dao.flow.impl.FlowRefDaoImpl"></bean>
+
+	
+	<!-- ＝＝＝＝＝审计助手＝＝＝＝＝＝＝ -->
+	<bean id="shenJiZhuShouDao" class="com.hnzskj.persist.dao.sjzs.impl.ShenJiZhuShouDaoImpl" scope="prototype"></bean>
+	<bean id="shenJiFaGuiDao" class="com.hnzskj.persist.dao.sjzs.impl.ShenJiFaGuiDaoImpl" scope="prototype"></bean>
+	<bean id="dingXingYiJuDao" class="com.hnzskj.persist.dao.sjzs.impl.DingXingYiJuDaoImpl" scope="prototype"></bean>
+	<bean id="fangFaAnLiDao" class="com.hnzskj.persist.dao.sjzs.impl.FangFaAnLiDaoImpl" scope="prototype"></bean>
+	<bean id="attachSJZSDao" class="com.hnzskj.persist.dao.sjzs.impl.AttachSJZSDaoImpl" scope="prototype"></bean>
+	<bean id="sjdhDao" class="com.hnzskj.persist.dao.sjzs.impl.SjdhMethodDaoImpl" scope="prototype"></bean>
+	<bean id="updateDataLogDao" class="com.hnzskj.persist.dao.sjzs.impl.UpdateDataLogDaoImpl" scope="prototype"></bean>
+	<bean id="dataDicDao" class="com.hnzskj.persist.dao.sjzs.impl.DataDicDaoImpl" scope="prototype"></bean>
+	<bean id="shiShiFangAnDao" class="com.hnzskj.persist.dao.sjzs.impl.ShiShiFangAnDaoImpl" scope="prototype"></bean>
+	<bean id="checkLogDao" class="com.hnzskj.persist.dao.sjzs.impl.CheckLogDaoImpl" scope="prototype"></bean>
+	
+	
+	
+	<!-- 前台页面 -->
+	<bean id="regLoginDao" class="com.hnzskj.persist.dao.fore.impl.RegLoginDaoImpl" scope="prototype">
+		<property name="employeeDao" ref="employeeDao"></property>
+	</bean>
+	<bean id="searchDao" class="com.hnzskj.persist.dao.fore.impl.SearchDaoImpl" scope="prototype">
+		<property name="dingXingYiJuDao" ref="dingXingYiJuDao" />
+		<property name="shenJiFaGuiDao" ref="shenJiFaGuiDao" />
+		<property name="fangFaAnLiDao" ref="fangFaAnLiDao" />
+		<property name="sjdhMethodDao" ref="sjdhDao" />
+		<property name="dataDicDao" ref="dataDicDao" />
+		<property name="shiShiFangAnDao" ref="shiShiFangAnDao" />
+	</bean>
+	<bean id="showInfoDao" class="com.hnzskj.persist.dao.fore.impl.ShowInfoDaoImpl" scope="prototype">
+		<property name="dataDicDao" ref="dataDicDao" />
+	</bean>
+	<bean id="wdzsDao" class="com.hnzskj.persist.dao.fore.impl.WdzsDaoImpl" scope="prototype">
+		
+	</bean>
+	<bean id="clientUploadDao" class="com.hnzskj.persist.dao.fore.impl.ClientUploadDaoImpl" scope="prototype">
+		
+	</bean>
+	
+	<!-- 针对审计导航前台显示 -->
+	
+	<bean id="showXmlDao" class="com.hnzskj.persist.dao.xml.impl.ShowXmlDaoImpl" scope="prototype">
+		<property name="flowRefDao" ref="flowRefDao"></property>
+		<property name="workFlowDao" ref="workFlowDao"></property>
+		<property name="sjdhDao" ref="sjdhDao"></property>
+	</bean>
+	<!-- 前台上传附件 -->
+	<bean id="clientUploadAttachDao" class="com.hnzskj.persist.dao.fore.impl.ClientUploadAttachDaoImpl" scope="prototype">
+	</bean>
+	<!-- 数据迁移 -->
+	<bean id="transportDataLogDao" class="com.hnzskj.persist.dao.sjzs.impl.TransportDataLogDaoImpl" scope="prototype">
+	</bean>
+</beans>

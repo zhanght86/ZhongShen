@@ -1,0 +1,104 @@
+@CHARSET "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+	background-color: #ffffff;
+}
+
+a:FOCUS,a:LINK,a:VISITED {
+	color: blue;
+}
+
+#top {
+	width: 100%;
+	height: 30px;
+	margin-top: 10px;
+	margin-right: 30px;
+	font-size: 14px;
+	text-align: right;
+}
+
+.pageContent a {
+	font-size: 15px;
+}
+
+#main {
+	text-align: center;
+}
+
+#main .title {
+	width: 100%;
+	height: 120px;
+	font-size: 50px;
+	font-family: "楷体";
+	font-style: inherit;
+	margin: 150px auto 0 auto;
+	text-align: center;
+	text-decoration: none;
+}
+
+#main .title a {
+	font-size: 60px;
+	font-family: "楷体";
+	text-decoration: none;
+	color: #e10602;
+	margin-left:-70px;
+}
+
+.serc {
+	width: 450px;
+	margin: 0 auto 0 auto;
+	text-align: center;
+}
+
+.serc a {
+	width: 73px;
+	line-height: 35px;
+	font-family: "宋体";
+	font-size: 18px;
+	display: inline;
+	margin-left: 2px;
+}
+
+.serc .first {
+	width: 45px;
+	margin-right: 0;
+}
+
+.serc .search_text {
+	height: 30px;
+	width: 520px;
+	margin-top:5px;
+}
+
+.serc .search_but {
+	height: 32px;
+	width: 100px;
+	margin-top:5px;
+}
+
+.searchList {
+	display: none;
+}
+
+
+.all_boot{
+	clear:both;
+	width:100%;
+	height:60px;
+}
+.all_boot .boot{
+	width:700px;
+	height:25px;
+	margin-left:25%;
+	margin-top:350px;
+	color:black;
+}
+.all_boot .boot a{
+	color:black;
+}
+.all_boot .boot a:hover{
+	color:red;
+}

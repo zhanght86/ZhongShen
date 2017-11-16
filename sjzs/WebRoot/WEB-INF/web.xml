@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<!-- Spring配置文件位置 -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/config/applicationContext.xml</param-value>
+	</context-param>
+
+	<!-- 系统登陆验证过滤器 -->
+	<filter>
+		<filter-name>UrlFilter</filter-name>
+		<filter-class>com.hnzskj.common.filter.URLFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>UrlFilter</filter-name>
+		<url-pattern>/system/*</url-pattern>
+	</filter-mapping>
+
+	<filter>
+		<filter-name>struts2-cleanup</filter-name>
+		<filter-class>org.apache.struts2.dispatcher.ActionContextCleanUp</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>struts2-cleanup</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<!-- struts2 配置 -->
+	<filter>
+		<filter-name>struts2</filter-name>
+		<filter-class>org.apache.struts2.dispatcher.FilterDispatcher</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>*.action</url-pattern>
+		<url-pattern>*.jsp </url-pattern>
+	</filter-mapping>
+
+	<!-- 监听Bean的request,session作用域 -->
+	<listener>
+		<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+	</listener>
+	<!-- spring 配置 -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<!-- session监听器  监听session的关闭 -->
+	<listener>
+		<listener-class>com.hnzskj.common.monitor.SessionMonitor</listener-class>
+	</listener>
+	<!-- DWR 配置 -->
+	<servlet>
+		<servlet-name>dwr</servlet-name>
+		<servlet-class>org.directwebremoting.servlet.DwrServlet</servlet-class>
+		<init-param>
+			<param-name>config</param-name>
+			<param-value>/WEB-INF/config/dwr.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>dwr</servlet-name>
+		<url-pattern>/dwr/*</url-pattern>
+	</servlet-mapping>
+
+	<!--  proxool servlet定义 -->
+	<servlet>
+		<servlet-name>ServletConfigurator</servlet-name>
+		<servlet-class>org.logicalcobwebs.proxool.configuration.ServletConfigurator</servlet-class>
+		<init-param>
+			<param-name>propertyFile</param-name>
+			<param-value>/WEB-INF/config/db.properties</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<!-- 系统初始化 -->
+	<servlet>
+		<servlet-name>allInit</servlet-name>
+		<servlet-class>com.hnzskj.common.InitServlet</servlet-class>
+		<init-param>
+			<param-name>log4j</param-name>
+			<param-value>/WEB-INF/config/log4j.properties</param-value>
+		</init-param>
+		<init-param>
+			<param-name>systemParameter</param-name>
+			<param-value>/WEB-INF/config/system.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>databasePath</param-name>
+			<param-value>/WEB-INF/config/db.properties</param-value>
+		</init-param>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+
+	<!-- 登录验证码 -->
+	<servlet>
+		<servlet-name>randomNumber</servlet-name>
+		<servlet-class>com.hnzskj.common.RandomNumber</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>randomNumber</servlet-name>
+		<url-pattern>/servlet/*</url-pattern>
+	</servlet-mapping>
+
+	<!-- FCKEditor Servlet 配置-->
+	<servlet>
+		<servlet-name>ConnectorServlet</servlet-name>
+		<servlet-class>net.fckeditor.connector.ConnectorServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ConnectorServlet</servlet-name>
+		<url-pattern>
+			/fckeditor/editor/filemanager/connectors/*
+		</url-pattern>
+	</servlet-mapping>
+
+	<!-- 系统出错提示页面 -->
+	<error-page>
+		<exception-type>java.lang.Exception</exception-type>
+		<location>/error.jsp</location>
+	</error-page>
+
+	<!-- 404错误页面 -->
+	<error-page>
+		<error-code>404</error-code>
+		<location>/404.jsp</location>
+	</error-page>
+
+	<!-- jsp自定义工具函数 -->
+	<jsp-config>
+		<taglib>
+			<taglib-uri>funutils</taglib-uri>
+			<taglib-location>/WEB-INF/tld/funcionutils.tld</taglib-location>
+		</taglib>
+	</jsp-config>
+
+	<!-- 设置session的生命周期为10分钟 -->
+	<session-config>
+		<session-timeout>100</session-timeout>
+	</session-config>
+
+	<!-- jfreechart配置 -->
+	<servlet>
+		<servlet-name>DisplayChart</servlet-name>
+		<servlet-class>org.jfree.chart.servlet.DisplayChart</servlet-class>
+	</servlet>
+
+
+
+
+
+
+	<!-- 项目附件上传 -->
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>UploadServlet</servlet-name>
+		<servlet-class>com.hnzskj.web.servlet.UploadServlet</servlet-class>
+	</servlet>
+	<!-- 项目附件下载 -->
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>DownLoadServlet</servlet-name>
+		<servlet-class>com.hnzskj.web.servlet.DownLoadServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>FileData</servlet-name>
+		<servlet-class>com.hnzskj.web.servlet.FileData</servlet-class>
+	</servlet>
+
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>UploadServletSJZS</servlet-name>
+		<servlet-class>com.hnzskj.web.servlet.UploadServletSJZS</servlet-class>
+	</servlet>
+
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>DownLoadServletSJZS</servlet-name>
+		<servlet-class>com.hnzskj.web.servlet.DownLoadServletSJZS</servlet-class>
+	</servlet>
+
+	<!-- 前台验证 -->
+	<servlet>
+		<servlet-name>CheckEmplNameServlet</servlet-name>
+		<servlet-class>com.hnzskj.web.servlet.CheckEmplNameServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CheckEmplPassServlet</servlet-name>
+		<servlet-class>com.hnzskj.web.servlet.CheckEmplPassServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CheckYzmServlet</servlet-name>
+		<servlet-class>com.hnzskj.web.servlet.CheckYzmServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CheckEmplLoginServlet</servlet-name>
+		<servlet-class>com.hnzskj.web.servlet.CheckEmplLoginServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CheckEmplRegServlet</servlet-name>
+		<servlet-class>com.hnzskj.web.servlet.CheckEmplRegServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>CheckUpdateServlet</servlet-name>
+		<servlet-class>com.hnzskj.web.servlet.CheckUpdateServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>UserKeyBindServlet</servlet-name>
+		<servlet-class>com.hnzskj.web.servlet.UserKeyBindServlet</servlet-class>
+	</servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>CheckEmplUserKeyServlet</servlet-name>
+    <servlet-class>com.hnzskj.web.servlet.CheckEmplUserKeyServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UploadServletSJZSAttach</servlet-name>
+    <servlet-class>com.hnzskj.web.servlet.UploadServletSJZSAttach</servlet-class>
+  </servlet>
+
+
+
+
+
+	<servlet-mapping>
+		<servlet-name>UploadServlet</servlet-name>
+		<url-pattern>/attachment/upload</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>DownLoadServlet</servlet-name>
+		<url-pattern>/attachment/download/downLoadServlet</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet-mapping>
+		<servlet-name>FileData</servlet-name>
+		<url-pattern>/FileData</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>UploadServletSJZS</servlet-name>
+		<url-pattern>/attachment/UploadServletSJZS</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DownLoadServletSJZS</servlet-name>
+		<url-pattern>/attach/download/DownLoadServletSJZS</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CheckEmplNameServlet</servlet-name>
+		<url-pattern>/servlet/checkEmplNameServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CheckEmplPassServlet</servlet-name>
+		<url-pattern>/servlet/checkEmplPassServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CheckYzmServlet</servlet-name>
+		<url-pattern>/servlet/checkYzmServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CheckEmplLoginServlet</servlet-name>
+		<url-pattern>/servlet/checkEmplLoginServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CheckEmplRegServlet</servlet-name>
+		<url-pattern>/servlet/checkEmplRegServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CheckUpdateServlet</servlet-name>
+		<url-pattern>/servlet/CheckUpdateServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UserKeyBindServlet</servlet-name>
+		<url-pattern>/servlet/UserKeyBindServlet</url-pattern>
+	</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CheckEmplUserKeyServlet</servlet-name>
+    <url-pattern>/servlet/checkUserKeyServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>UploadServletSJZSAttach</servlet-name>
+    <url-pattern>/attachment/UploadServletSJZSAttach</url-pattern>
+  </servlet-mapping>
+
+  
+   <servlet>
+    <servlet-name>switchShowXml</servlet-name>
+    <servlet-class>com.hnzskj.web.servlet.xml.SwitchShowXmlServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DownLoadServletStencil</servlet-name>
+    <servlet-class>com.hnzskj.web.servlet.DownLoadServletStencil</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>MenuLoadServlet</servlet-name>
+    <servlet-class>com.hnzskj.web.servlet.MenuLoadServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>clientDownLoadServlet</servlet-name>
+    <servlet-class>com.hnzskj.web.servlet.ClientDownLoadServlet</servlet-class>
+  </servlet>
+
+
+
+  <servlet-mapping>
+    <servlet-name>switchShowXml</servlet-name>
+    <url-pattern>/servlet/switchShowXml</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DownLoadServletStencil</servlet-name>
+    <url-pattern>/stencil/DownLoadServletStencil</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MenuLoadServlet</servlet-name>
+    <url-pattern>/servlet/menuServlet</url-pattern>
+  </servlet-mapping>
+  <!-- 前台用户下载 -->
+  <servlet-mapping>
+    <servlet-name>clientDownLoadServlet</servlet-name>
+    <url-pattern>/servlet/clientDownloadServlet</url-pattern>
+  </servlet-mapping>
+
+
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>

@@ -1,0 +1,338 @@
+@CHARSET "UTF-8";
+.savebtn{
+          width:93px;    
+          height:27px;    
+          background:url("../images/buttons/save.gif") no-repeat center;    
+          font-size:0;            
+          line-height:0;    
+          border: 0px;
+          cursor:hand;
+	}	
+.backbtn{
+          width:93px;    
+          height:27px;    
+          background:url("../images/buttons/t_back.gif") no-repeat center;    
+          font-size:0;            
+          line-height:0;    
+          border: 0px;
+          cursor:hand;
+	}
+.selectUnit{ 
+          width:93px;    
+          height:27px;    
+          background:url("../images/buttons/select.gif") no-repeat center;      
+          font-size:0;            
+          line-height:0;    
+          border: 0px;
+          cursor:hand;
+	}
+.searchbtn{
+		 width:93px;    
+         height:27px;    
+         background:url("../images/buttons/t_search.gif") no-repeat center;    
+         font-size:0;            
+         line-height:0;    
+         border: 0px;
+         cursor:hand;
+	}
+.addbtn{
+		 width:93px;    
+         height:27px;    
+         background:url("../images/buttons/t_add.gif") no-repeat center;    
+         font-size:0;            
+         line-height:0;    
+         border: 0px;
+         cursor:hand;
+	}
+.modifybtn{
+		 width:93px;    
+         height:27px;    
+         background:url("../images/buttons/t_modify.gif") no-repeat center;    
+         font-size:0;            
+         line-height:0;    
+         border: 0px;
+         cursor:hand;
+	}
+.deletebtnn{
+		 width:93px;    
+         height:27px;    
+         background:url("../images/buttons/t_delete.gif") no-repeat center;    
+         font-size:0;            
+         line-height:0;    
+         border: 0px;
+         cursor:hand;
+	}
+.inputbtn{
+		 width:93px;    
+         height:27px;    
+         background:url("../images/buttons/t_input.gif") no-repeat center;    
+         font-size:0;            
+         line-height:0;    
+         border: 0px;
+         cursor:hand;
+	}
+.outbtn{
+	 	width:93px;    
+        height:27px;    
+        background:url("../images/buttons/t-export.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+}
+.outallbtn{
+	 width:93px;    
+        height:27px;    
+        background:url("../images/buttons/all.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+}
+.typebtn{
+	 width:93px;    
+        height:27px;    
+        background:url("../images/buttons/type.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+}
+.agentbtn{
+	 width:93px;    
+        height:27px;    
+        background:url("../images/buttons/agent.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+}
+.powerbtn{
+	 width:93px;    
+        height:27px;    
+        background:url("../images/buttons/power.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+}
+.groupbtn{
+	 width:113px;    
+        height:27px;    
+        background:url("../images/buttons/group.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+}
+.addRolebtn{
+	 width:93px;    
+        height:27px;    
+        background:url("../images/buttons/addrole.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+}
+.gavePowerbtn{
+	 width:93px;    
+        height:27px;    
+        background:url("../images/buttons/gavepower.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+}
+.tongjibtn{
+	 width:93px;    
+        height:27px;    
+        background:url("../images/buttons/tongji.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+}
+.pointbtn{
+	 width:100px;    
+        height:27px;    
+        background:url("../images/buttons/point.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+}
+.oafeedbtn{
+	 width:100px;    
+        height:27px;    
+        background:url("../images/buttons/oafeed.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+}
+.keybtn{
+	 width:100px;    
+        height:27px;    
+        background:url("../images/buttons/key.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+}
+.findunitbtn{
+	 width:100px;    
+        height:27px;    
+        background:url("../images/buttons/selectunit.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+}
+.findmanbtn{
+		 width:100px;    
+        height:27px;    
+        background:url("../images/buttons/selectman.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+}
+.feedbtn{
+	 width:100px;    
+        height:27px;    
+        background:url("../images/buttons/feed.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+}
+.replybtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/reply.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+.resetallbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/resetall.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+.kongbtn{
+	
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/kong.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+.kong2btn{
+	
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/kong2.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+.importbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/import.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+.closebtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/close1.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+.managebtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/manager.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+	
+.createprobtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/creatpro.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+.workbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/work.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+		
+.resetPassWordbtn{
+	width:93px;    
+        height:27px;    
+        background:url("../images/buttons/resetPassWord.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+}		
+.confirmbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/confrim.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+.uploadbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/uploadbtn.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+.sendEgovdocbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/sendEgovdoc.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}
+.clearbtn{
+		width:93px;    
+        height:27px;    
+        background:url("../images/buttons/clear.gif") no-repeat center;    
+        font-size:0;            
+        line-height:0;    
+        border: 0px;
+        cursor:hand;
+	}

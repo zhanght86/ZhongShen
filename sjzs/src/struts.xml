@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<!-- 允许上传的文件最大10M -->
+	<constant name="struts.multipart.maxSize" value="104857600" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<!-- 引入系统管理模块包 -->
+	<include file="system-struts.xml"></include>
+	<!-- 每个模块的action都集中定义，且要用注释进行包含 -->
+	<package name="sjzs" extends="struts-default" namespace="/">
+		<action name="attach" class="attachSJZSAction">
+			<result name="fileSelect">/WEB-INF/view/sjzs/selectFileMain.jsp</result>
+			<result name="fileSelectAttach">/WEB-INF/view/sjzs/fileSelectAttach.jsp</result>
+			<result name="upPage">/WEB-INF/view/sjzs/uploadFile.jsp</result>
+			<result name="upSinglePage">/WEB-INF/view/sjzs/uploadFileSingle.jsp</result>
+			<result name="upSinglePageattach">/WEB-INF/view/sjzs/uploadFileSingleattach.jsp</result>
+			<result name="updateDateUpFilePage">/WEB-INF/view/sjzs/updateDataUploadFile.jsp
+			</result>
+			<result name="selectUpdateDataFile">/WEB-INF/view/sjzs/selectUpdateDataFileMain.jsp
+			</result>
+			<result name="showFF">/WEB-INF/view/sjzs/showFFAL.jsp</result>
+			<result name="showFiles">/WEB-INF/view/sjzs/showFiles.jsp</result>
+			<result name="fail">/view/common/pub_fail.jsp</result>
+			<result name="suc">/WEB-INF/view/sjzs/suc.jsp</result>
+			<result name="addsucs">/WEB-INF/view/sjzs/addSuccess.jsp?type=addMenuWin</result>
+			<!-- 删除附件 -->
+			<result name="delSuc" type="redirectAction">
+				<param name="actionName">attach!searchMessage.action</param>
+				<param name="attach.attachId">${attach.attachId}</param>
+				<param name="namespace">/system</param>
+			</result>
+			<!-- 删除上传的文件 -->
+			<result name="deleteSuc" type="redirectAction">
+				<param name="actionName">attach!getUpdateDatas.action</param>
+				<param name="type">${type}</param>
+				<param name="namespace">/system</param>
+			</result>
+		</action>
+		<!-- 前台-用户登录注册部分 -->
+		<action name="reglogin" class="regLoginAction">
+			<!-- 通用主页（主要是用户没有登录的时候）(原来登陆后的页面，现在改为没有登陆也能用的页面) -->
+			<result name="index" type="redirectAction">
+				<param name="actionName">showInfo!showSy.action</param>
+				<param name="namespace">/</param>
+			</result>
+			<!-- 用户登录以后的主要页面 -->
+			<result name ="indexPage" type="redirectAction">
+				<param name="actionName">showInfo!showSy.action</param>
+				<param name="namespace">/</param>
+			</result>
+			<result name="reg">/view/fore/reg.jsp</result>
+			<result name="login">/view/fore/login.jsp</result>			
+			<result name="regSuc" type="redirectAction">
+				<param name="actionName">showInfo!showSy.action</param>
+				<param name="namespace">/</param>
+			</result>			
+			<result name="logSuc" type="redirectAction">
+				<param name="actionName">showInfo!showSy.action</param>
+				<param name="namespace">/</param>
+			</result>		
+			<result name="image">/view/common/image.jsp</result>
+			<result name="homePageError" type="redirectAction">
+				<param name="actionName">reglogin!index.action</param>
+				<param name="namespace">/</param>
+			</result>
+			<result name="homePage">/view/fore/homePage.jsp</result>
+			<result name="updateInfo">/view/fore/updateInfo.jsp?type=0</result>
+			<result name="infoUpdate"  >/view/fore/homePage.jsp</result>
+			<result name="updatePass">/view/fore/updateInfo.jsp?type=3</result>
+			<result name="passUpdate" >/view/fore/homePage.jsp</result>
+			<!-- <param name="actionName">reglogin!showHomePage.action</param>
+				<param name="namespace">/</param>
+-->
+			<result name="fail">/view/common/pub_fail.jsp</result>
+			<result name="exit" type="redirectAction">
+				<param name="actionName">reglogin!index.action</param>
+				<param name="namespace">/</param>
+			</result>
+		</action>
+		
+		<action name="sjdhxml" class="showXmlAction" >
+			<result name="init">/view/xml/showSjdh.jsp</result>
+			<result name="fail">/view/common/pub_fail.jsp</result>
+		</action>
+		<!-- 前台-用户搜索部分 -->
+		<action name="search" class="searchAction">
+			<result name="none" type="redirectAction">
+				<param name="actionName">showInfo!showSy.action</param>
+				<param name="namespace">/</param>
+			</result>
+			<result name="noUser"  type="redirectAction">
+				<param name="actionName">reglogin!index.action</param>
+				<param name="namespace">/</param>
+			</result>
+			<result name="list" >/view/fore/searchContentList.jsp</result>
+			<result name="showSjfg">/view/fore/contentSjfg.jsp</result>
+			<result name="showDxyj">/view/fore/contentDxyj.jsp</result>
+			<result name="showFfal">/view/fore/contentFfal.jsp</result>
+			<result name="showSjdh">/view/fore/contentSjdh.jsp</result>
+			<result name="sjdh">/view/workflow/freeFlow.jsp</result>
+			<result name="showSjsx">/view/fore/contentSjsx.jsp</result>
+			<result name="showSsfa">/view/fore/contentSsfa.jsp</result>
+			<result name="showTache">/view/workflow/showTache.jsp</result>
+			<result name="fail">/view/common/pub_fail.jsp</result>
+			<!-- 用户登录以后，搜索时如果无内容搜索时（主要控制原来用户选择的那个标签） -->
+			<result name="syInfo" type="redirectAction">
+				<param name="actionName">showInfo!showSy.action</param>
+				<param name="namespace">/</param>
+			</result>
+			<result name="sjfgInfo" type="redirectAction">
+				<param name="actionName">showInfo!showSjfg.action</param>
+				<param name="namespace">/</param>
+			</result>			
+			<result name="dxyjInfo" type="redirectAction">
+				<param name="actionName">showInfo!showDxyj.action</param>
+				<param name="namespace">/</param>
+			</result>
+			<result name="ffalInfo" type="redirectAction">
+				<param name="actionName">showInfo!showFfal.action</param>
+				<param name="namespace">/</param>
+			</result>
+			<result name="sjdhInfo" type="redirectAction">
+				<param name="actionName">showInfo!showSjdh.action</param>
+				<param name="namespace">/</param>
+			</result>
+			<result name="sjsxInfo" type="redirectAction">
+				<param name="actionName">showInfo!showSjsx.action</param>
+				<param name="namespace">/</param>
+			</result>
+			<result name="ssfaInfo" type="redirectAction">
+				<param name="actionName">showInfo!showSsfa.action</param>
+				<param name="namespace">/</param>
+			</result>
+			<result name="wdzsInfo" type="redirectAction">
+				<param name="actionName">showInfo!showWdzs.action</param>
+				<param name="namespace">/</param>
+			</result>
+		</action>
+		<!-- 前台，用户登录以后展示部分 -->
+		<action name="showInfo" class="showInfoAction">
+			<result name="index" type="redirectAction">
+				<param name="actionName">reglogin!index.action</param>
+				<param name="namespace">/</param>
+			</result>
+			<result name="showSy">/view/fore/mainPage.jsp</result>
+			<!--  
+			<result name="showSjfg">/view/fore/listPage.jsp?showType=sjfg</result>
+			<result name="showDxyj">/view/fore/listPage.jsp?showType=dxyj</result>
+			<result name="showFfal">/view/fore/listPage.jsp?showType=ffal</result>
+			<result name="showSjdh">/view/fore/listPage.jsp?showType=sjdh</result>
+			<result name="showSjsx">/view/fore/listPage.jsp?showType=sjsx</result>
+			<result name="showSsfa">/view/fore/listPage.jsp?showType=ssfa</result>
+			-->
+			<result name="listSjfg">/view/fore/listAuditLaws.jsp</result>
+			<result name="listDxyj">/view/fore/listAuditSearchDXYJ.jsp</result>
+			<result name="listFfal">/view/fore/listFFAL.jsp</result>
+			<result name="listSjdh">/view/fore/listSjdhMethod.jsp</result>
+			<result name="listSjsx">/view/fore/listDataDic.jsp</result>
+			<result name="listSsfa">/view/fore/listSSFA.jsp</result>
+			<result name="showMain">/view/fore/listPage.jsp</result>
+			<result name="showMainList">/view/fore/listMainPage.jsp</result>
+			<result name="showWdzs">/view/fore/zhuShouPage.jsp</result>						
+		</action>
+		<action name="wdzs" class="wdzsAction">
+			<result name="zsGrzs">/view/fore/zsGrzx.jsp</result>
+			<result name="zsWdsc">/view/fore/zsWdsc.jsp</result>
+			<result name="deleSuc" type="redirectAction">
+				<param name="actionName">wdzs!zsWdsc.action</param>
+				<param name="namespace">/</param>
+			</result>
+			<result name="none">/index.jsp</result>
+			<result name="upfile">/view/fore/up_file.jsp</result>
+			<result name="fileSelect">/view/fore/selectFileMain.jsp</result>
+			<result name="upSinglePage">/view/fore/uploadFileSingle.jsp</result>
+			<result name="upMess">/view/fore/upFileMess.jsp</result>
+			
+			<result name="contSjfg">/view/fore/contentSjfg.jsp</result>
+			<result name="contFfal">/view/fore/contentFfal.jsp</result>
+			<result name="contSsfn">/view/fore/contentSsfa.jsp</result>
+			<result name="showCheckLog">/view/fore/showCheckLog.jsp</result>
+			
+			<result name="index" type="redirectAction">
+				<param name="actionName">reglogin!index.action</param>
+				<param name="namespace">/</param>
+			</result>
+		</action>
+		
+		<action name="userkey" class="userKeyBingAction">
+			<result name="getUserKeyPage">/view/userKey/getUserKeypage.jsp</result>
+			<result name="fail">/view/common/pub_fail.jsp</result>
+		</action>
+
+	</package>
+</struts>

@@ -1,0 +1,86 @@
+@CHARSET "UTF-8";
+html,body{
+	margin:0;
+	padding:0;
+}
+.tag_main{
+	height:100%;
+	font-family: 楷体;
+	font-size: 14px;
+}
+.wdzs_left{
+	width:15%;
+	height:200px;
+	margin-top:20px;
+	float: left;
+}
+
+.wdzs_left div{
+	width:100%;
+	height:30px;
+	line-height: 30px;
+	text-align: center;
+	margin-top:5px;
+	cursor: pointer;
+}
+.wdsc_cont {
+	width: 84%;
+	height: 625px;
+	float: right;
+	border: 2px solid #d1e4dc;
+}
+
+.tag_main .wdsc_cont .wdsc_but {
+	width: 100%;
+	height: 40px;
+	line-height: 50px;
+	text-align: center;
+}
+
+.tag_main .wdsc_cont .wdsc_but input {
+	width: 100px;
+	height: 25px;
+	margin-left: 10px;
+}
+
+.tag_main .wdsc_cont .wdsc_but input:hover {
+	cursor: pointer;
+}
+
+.tag_main .wdsc_cont .wdsc_main {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top:10px;
+}
+
+.tag_main .wdsc_cont .wdsc_main table {
+	width: 100%;
+	padding-left:10px;
+	padding-right:10px;
+}
+
+.tag_main .wdsc_cont .wdsc_main table .tab_tit td {
+	border-left: #e5e5e5 solid 1px;
+	border-bottom: solid #c8dbd3 1px;
+}
+
+.tag_main .wdsc_cont .wdsc_main table td span {
+	margin-top: 5px;
+	margin-left: 5px;
+}
+
+.tag_main .wdsc_cont .wdsc_main table .tab_cont:hover {
+	background-color: #fafdfc;
+	cursor: pointer;
+}
+
+.tag_main .wdsc_cont .wdsc_main table .tab_cont_hover {
+	background-color: #fafdfc;
+	cursor: pointer;
+}
+
+.tag_main .wdsc_cont .wdsc_main table .tab_cont td {
+	line-height: 35px;
+	border-bottom: #e6e6e6 1px solid;
+}

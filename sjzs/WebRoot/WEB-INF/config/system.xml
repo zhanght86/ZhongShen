@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<system>
+	<!-- 初始化 页面登录账号信息 -->
+   <init>
+   	   <user>hnzsAdmin</user>	<!-- 初始化登录名 -->                  
+   	   <password>OlBT77+9fh9s77+9DFJV77+9WgPvv71D</password>	<!-- 初始化登录密码（加密后） --> 
+   </init>
+   <ggbm>
+   		<sms>0</sms><!-- 是否启用短信功能   默认1, 0-启用  1-不启用 -->
+   </ggbm>
+   <ET99>
+   		<pid>ffc5eb78</pid>
+   		<userpin>1234567812345678</userpin>
+   </ET99>
+   <!-- 添加用户的默认密码 -->
+   <default>
+   		<password>1</password>
+   </default>
+   
+   <mysqlPath>d:\ProgramFiles\MySQL\MySQLServer5.0\bin</mysqlPath>
+   <flashPaperPath>d:\ProgramFiles\Print2Flash3</flashPaperPath>
+   <hour>09</hour>
+   <min>31</min>
+   <PERIOD_DAY>86400000</PERIOD_DAY>
+</system>

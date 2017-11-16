@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dwr PUBLIC "-//GetAhead Limited//DTD Direct Web Remoting 3.0//EN" "http://getahead.org/dwr/dwr30.dtd">
+<dwr>
+	<allow>
+		<!-- 添加节点 start:dyw -->
+		<convert converter="bean" match="java.lang.StackTraceElement" />
+		<convert converter="exception" match="java.lang.Exception" />
+		<!-- 添加节点 start:dyw -->
+		
+		<!-- 判断当前用户是否存在-->
+		<create creator="spring" javascript="emplService" >
+			<param name="beanName" value="employeeService" />
+			<include method="isExsit" />
+		</create>
+
+		<!-- 判断当前角色是存在-->
+		<create creator="spring" javascript="role" >
+			<param name="beanName" value="roleService" />
+			<include method="isExsit" />
+		</create>
+		
+		
+		<!-- 日志管理系统模块开始 -->
+		
+		<convert converter="bean" match="com.hnzskj.persist.bean.attach.Attach">
+			<param name="include" value="attachId,attachName,attachType" />
+		</convert>
+		
+		<convert converter="bean" match="com.hnzskj.persist.bean.fileData.FileData">
+			<param name="include" value="journalID,fileId,tempFileType,tempFileName" />
+		</convert>
+		
+	
+		<!-- 根据用户名查找用户
+		<create creator="spring" javascript="checkEmplByAccount">
+			<param name="beanName" value="employeeService"></param>
+			<include method="getEmplByAccount"></include>
+		</create>
+		-->
+		<!-- 附件 -->
+	
+		<create creator="spring" javascript="attachSJZS">
+			<param name="beanName" value="attachSJZSService" />
+			<include method="delAttach" />
+			<include method="delAttachs" />
+			<include method="findAttachs" />
+		</create>
+		<create creator="spring" javascript="auditLaw">
+			<param name="beanName" value="dingXingYiJuService" />
+			<!-- 根据法规id获取法规内容 -->
+			<include method="getContentsByIds"/>
+			<!-- 将html转成文本形式 -->
+			<include method="getConByHtml" />
+		</create>
+		
+		<create creator="new" javascript="dwrUtil">
+			<param name="class" value="com.hnzskj.common.dwr.DwrUtil" />
+			<include method="delAttach" />
+			<include method="delAttachJS" />
+			<include method="delAttachUpdate" />
+			<include method="deleteByname" />
+		</create>
+		
+	
+	</allow>
+</dwr>

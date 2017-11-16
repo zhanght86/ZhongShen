@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+    <bean id="userAspect" class="com.hnzskj.service.system.impl.LogAop" scope="prototype">
+    	<property name="operationLogDao" ref="operationLogDao"/>
+    </bean>
+	<!-- 配置AOP -->
+	<aop:config>
+		<!-- 配置aspect切面类 -->
+		<aop:aspect ref="userAspect">
+			<!-- 配置pointcut,即切入点，对哪些类的哪些方法起到AOP的作用 -->
+			<aop:pointcut id="userServiceMethods"
+				expression="execution(* com.hnzskj.service.*.*.*(..))" />
+			<!-- 配置advice,即Aspect类中的aroundTest()方法，这里采用在业务方法执行前进行拦截 -->
+			<aop:around method="aroundTest" pointcut-ref="userServiceMethods" />
+		</aop:aspect>
+	</aop:config> 
+	
+	<bean id="page" class="com.hnzskj.common.Page" scope="prototype"/>
+	<!-- 引入dao层spring配置文件 -->
+	<import resource="applicationContext-dao.xml" />
+	<!-- 引入service层spring配置文件 -->
+	<import resource="applicationContext-service.xml" />
+	
+	<bean id="LoginAction" class="com.hnzskj.web.login.LoginAction" scope="prototype">
+		<property name="powerService" ref="powerService"/>
+		<property name="roleService" ref="roleService"/>
+		<property name="employeeService" ref="employeeService"/>
+		<property name="workFlowService" ref="workFlowService"></property>
+	</bean>
+	<!-- 文件下载 -->
+	<bean id="DownloadAction" class="com.hnzskj.web.DownloadAction" scope="prototype"></bean>
+	
+	<bean id="uploadWord" class="com.hnzskj.web.upload.ExportWordAction" scope="prototype"></bean>
+	
+<!-- ＝＝＝＝＝＝系统管理模块配置开始＝＝＝＝＝＝＝ -->
+	<!-- 组织用于dhtmltree的XML文档 -->
+	<bean id="createXMLAction" class="com.hnzskj.web.CreateXmlAction" scope="prototype">
+		<property name="powerService" ref="powerService"/>
+	</bean>
+
+	<!-- 员工管理 -->
+	<bean id="EmployeeAction" class="com.hnzskj.web.system.EmployeeAction"
+		scope="prototype">
+		<property name="employeeService" ref="employeeService" />
+		<property name="roleService" ref="roleService"/>
+		<property name="powerService" ref="powerService"/>
+	</bean>
+
+	<!-- 角色管理模块 -->
+	<bean id="RoleAction" class="com.hnzskj.web.system.RoleAction"
+		scope="prototype">
+		<property name="roleService" ref="roleService" />
+		<property name="powerService" ref="powerService"/>
+	</bean>
+
+	<!-- 功能模块管理模块 -->
+	<bean id="PowerAction" class="com.hnzskj.web.system.PowerAction"
+		scope="prototype">
+		<property name="powerService" ref="powerService"/>
+	</bean>
+
+	<!-- 日志模块 -->
+	<bean id="OperationLogAction" class="com.hnzskj.web.system.OperationLogAction" scope="prototype">
+		<property name="operationLogService" ref="operationLogService"/>
+	</bean>
+	
+	
+	
+	<!-- 文件上传下载类 -->	
+	<bean id="upLoadFile" class="com.hnzskj.common.UpLoadFile"  scope="prototype"/>
+
+	<!-- 系统配置文件管理模块开始 -->
+	<bean id="systemXmlAction" class="com.hnzskj.web.systemxml.SystemXmlAction" scope="prototype">
+		<property name="systemXmlService" ref="systemXmlService"></property>
+	</bean>
+	
+	<!-- 工作流 模块-->
+	<bean id="workflowAction" class="com.hnzskj.web.flow.WorkFlowAction" scope="prototype">
+		<property name="workFlowService" ref="workFlowService"></property>
+		<property name="wfsi" ref="dotLineService"></property>
+		<property name="employeeService" ref="employeeService" />
+		<property name="sjdhService" ref="sjdhService"></property>
+		<property name="flowRefService" ref="flowRefService"></property>
+		<property name="attachSJZSService" ref="attachSJZSService"></property>
+	</bean>
+	
+	<!-- 常用语 -->
+	<bean id="phrasesAction" class="com.hnzskj.web.flow.PhrasesAction">
+	 <property name="phrasesService" ref="phrasesService"></property>
+	</bean>
+	
+	<bean id ="shenpiActon" class="com.hnzskj.web.flow.ShenPiAction" scope="prototype" parent="workflowAction">
+		<!-- <property name="workFlowService" ref="workFlowService"></property> -->
+		<property name="spsi" ref="shenService"></property>
+	</bean>
+		<!-- ＝＝＝＝＝＝审计助手＝＝＝＝＝＝＝ -->
+	<bean id ="shenJiZhuShouAction" class="com.hnzskj.web.sjzs.ShenJiZhuShouAction" scope="prototype" >
+		<property name="shenJiZhuShouService" ref="shenJiZhuShouService"></property>
+		<property name="updateDataLogService" ref="updateDataLogService"/>
+	</bean>	
+	<bean id ="shenJiFaGuiAction" class="com.hnzskj.web.sjzs.ShenJiFaGuiAction" scope="prototype" >
+		<property name="shenJiFaGuiService" ref="shenJiFaGuiService"></property>
+		<property name="attachSJZSService" ref="attachSJZSService"></property>
+	</bean>	
+	<bean id ="dingXingYiJuAction" class="com.hnzskj.web.sjzs.DingXingYiJuAction" scope="prototype" >
+		<property name="dingXingYiJuService" ref="dingXingYiJuService"></property>
+	</bean>
+	<bean id ="fangFaAnLiAction" class="com.hnzskj.web.sjzs.FangFaAnLiAction" scope="prototype" >
+		<property name="fangFaAnLiService" ref="fangFaAnLiService"></property>
+		<property name="attachSJZSService" ref="attachSJZSService"></property>
+	</bean>
+	
+	<bean id ="userKeyBingAction" class="com.hnzskj.web.sjzs.UserKeyBingAction" scope="prototype" >
+	</bean>
+	
+	<bean id ="attachSJZSAction" class="com.hnzskj.web.sjzs.AttachSJZSAction" scope="prototype" >
+		<property name="attachSJZSService" ref="attachSJZSService"></property>
+	</bean>	
+		<bean id ="fileUploadAction" class="com.hnzskj.web.sjzs.FileUploadAction" scope="prototype" >
+	</bean>	
+	
+	<!--审计导航 -->
+	<bean id="sjdhAction" class="com.hnzskj.web.sjzs.SjdhMethodAction" scope="prototype">
+		<property name="sjdhService" ref="sjdhService"></property>
+	</bean>
+	
+	<!--审计事项 -->
+	<bean id="dataDicAction" class="com.hnzskj.web.sjzs.DataDicAction" scope="prototype">
+		<property name="dataDicService" ref="dataDicService"></property>
+		<property name="sjzsService" ref="shenJiZhuShouService"></property>
+	</bean>
+	
+	<!--审计实施方案-->
+	<bean id="shiShiFangAnAction" class="com.hnzskj.web.sjzs.ShiShiFangAnAction" scope="prototype">
+		<property name="shiShiFangAnService" ref="shiShiFangAnService"></property>
+		<property name="attachSJZSService" ref="attachSJZSService"></property>
+	</bean>
+	
+	<!-- 文档审核 -->
+	<bean id="wdshAction" class="com.hnzskj.web.sjzs.WenDangShenHeAction" scope="prototype">
+		<property name="clientUploadService" ref="clientUploadService"></property>
+		<property name="checkLogService" ref="checkLogService"></property>
+		<property name="clientUploadAttachService" ref="clientUploadAttachService"></property>
+	</bean>
+	
+	<!--用户上传 -->
+	<bean id="clientUploadAtion" class="com.hnzskj.web.sjzs.ClientUploadAction" scope="prototype">
+		<property name="clientUploadService" ref="clientUploadService"></property>
+		<property name="clientUploadAttachService" ref="clientUploadAttachService"></property>
+	</bean>
+	
+	<!--＝＝＝＝数据字典设置＝＝＝＝＝  -->
+	<bean id="RcCodeAction" class="com.hnzskj.web.system.RcCodeAction" scope="prototype">
+		<property name="rcService" ref="rcService"></property>
+	</bean>
+	
+	<!-- 前台页面设置 -->
+	<bean id="regLoginAction" class="com.hnzskj.web.fore.LoginAction" scope="prototype">
+		<property name="regLoginService" ref="regLoginService"></property>
+	</bean>
+	<bean id="searchAction" class="com.hnzskj.web.fore.SearchAction" scope="prototype">
+		<property name="searchService" ref="searchService"></property>
+		<property name="attachSJZSAction" ref="attachSJZSAction"></property>
+		<property name="wfsi" ref="dotLineService"></property>
+		<property name="workFlowAction" ref="workflowAction"></property>
+		<property name="clientUploadService" ref="clientUploadService"></property>
+	</bean>
+	<bean id="showInfoAction" class="com.hnzskj.web.fore.ShowInfoAction" scope="prototype">
+		<property name="showInfoService" ref="showInfoService"></property>
+		<property name="shenJiZhuShouService" ref="shenJiZhuShouService"></property>
+		<property name="sjdhService" ref="sjdhService"></property>
+		<property name="ssfaService" ref="shiShiFangAnService"></property>
+		<property name="dxyjService" ref="dingXingYiJuService"></property>
+		<property name="sjsxService" ref="dataDicService"></property>
+		<property name="sjfgService" ref="shenJiFaGuiService"></property>
+		<property name="ffalService" ref="fangFaAnLiService"></property>
+		<property name="clientUpload" ref="clientUploadService"></property>
+	</bean>
+	<bean id="wdzsAction" class="com.hnzskj.web.fore.WdzsAction" scope="prototype">
+		<property name="wdzsService" ref="wdzsService"></property>
+		<property name="clientUploadService" ref="clientUploadService"></property>
+		<property name="clientUpload" ref="clientUploadService"></property>
+		<property name="checkLogService" ref="checkLogService"></property>
+	</bean>
+	
+	
+	<!-- 针对审计导航前台显示 -->
+	<bean id="showXmlAction" class="com.hnzskj.web.xml.ShowXmlAction" scope="prototype">
+		<property name="showXmlService" ref="showXmlService"></property>
+	</bean>
+</beans>

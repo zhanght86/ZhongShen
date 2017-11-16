@@ -1,0 +1,164 @@
+@CHARSET "UTF-8";
+
+
+html,body {
+	margin: 0;
+	padding: 0;
+	font-size: 14px;
+	background-color: #ffffff;
+	background: url("../../images/fore/back_all.png") repeat;
+}
+
+a:FOCUS,a:LINK,a:VISITED {
+	color: blue;
+}
+
+#top {
+	width: 100%;
+	height: 30px;
+	margin-right: 10px;
+	line-height:30px;
+	text-align: right;
+}
+#top a{
+	font-size:14px;
+	color:#00c;
+	text-decoration: none;
+}
+#top a:hover{
+	color: red;
+	text-decoration: underline;
+}
+.pageContent a {
+	font-size: 15px;
+}
+
+#main {
+	width: 500px;
+	margin-left: 20px;
+}
+
+#main .title {
+	width: 230px;
+	height: 60px;
+	margin-left: 200px;
+	text-align: center;
+}
+#main .title a{
+	border: none;
+	text-decoration: none;
+}
+
+.serc {
+	width: 500px;
+	height: 70px;
+	margin-left: 50px;
+	text-align: center;
+}
+
+.serc a {
+	width: 60px;
+	line-height: 27px;
+	font-family: "宋体";
+	font-size: 14px;
+	display: inline;
+	margin-left: 2px;
+}
+
+.serc .first {
+	width: 40px;
+	margin-right: 0;
+}
+
+.serc .search_text {
+	height: 27px;
+	width: 420px;
+}
+.serc .search_but{
+	border: none;
+	text-decoration: none;
+}
+.serc .search_but input{
+	width:90px;
+	height:30px;
+	background: url("../../images/fore/but_back.png") repeat-x;
+
+}
+.serc .search_but input:ACTIVE {
+	background: #DDDDDD;
+}
+
+.searchList {
+	width: 780px;
+	height: 700px;
+	margin-top: 20px;
+	margin-left: 60px;
+}
+/***控制搜索内容样式**/
+
+.searchList .list_top{
+	width:100%;
+	height:30px;
+	clear: both;
+}
+.searchList .list_type{
+	width:115px;
+	height:30px;
+	line-height:30px;
+	float:left;	
+	color: df0000;
+	overflow: hidden;
+	white-space: normal;
+}
+.searchList .list_title{
+	width:80px;
+	height:30px;
+	line-height:30px;
+	float:left;	
+	overflow: hidden;
+}
+.searchList .list_title a{
+	color: blue;
+}
+.searchList .list_title a:hover{
+	color:red;
+}
+.searchList .list_date{
+	width:100px;
+	height:30px;
+	line-height:30px;
+	float:left;
+	overflow: hidden;
+	color: #358832;
+	margin-left: 5px;
+}
+.searchList .list_cont{
+	clear: both;
+	width:100%;
+	line-height:25px;
+	margin-left:5px;
+	float:left;
+	padding-bottom: 10px;
+	font-size: 14px;
+	font-family: arial;
+}
+
+/****************/
+.all_boot{
+	clear:both;
+	width:1050px;
+	height:60px;
+	margin-top:20px; 
+}
+.all_boot .boot{
+	width:700px;
+	height:25px;
+	margin-left:25%;
+	margin-top:25px;
+}
+.all_boot .boot a{
+	color:black;
+}
+.all_boot .boot a:hover{
+	color:red;
+}
